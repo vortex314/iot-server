@@ -28,7 +28,7 @@
             "PUBLISH src/redis/proxy $config"
         ]
     },
-    "log-ignore": {
+    "log": {
         "prefix": "/data/log/udp2redis_",
         "count": 10,
         "limit": 1048576
