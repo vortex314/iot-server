@@ -1,0 +1,92 @@
+version: '3'
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: "eclipse-mosquitto"
+    ports:
+      - "1883:1883"
+    volumes:
+      - ${HOME}/config/mosquitto:/mosquitto/config
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+  redis:
+    container_name: redis
+    image: "redis/redis-stack-server:latest"
+    ports:
+      - "6379:6379"
+    volumes:
+      - ${HOME}/data/redis:/data
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ${HOME}/config/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+  openhab:
+    container_name: openhab
+    image: "openhab/openhab:3.1.0"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "5555:5555"
+    volumes:
+      - ${HOME}/config/openhab:/openhab/conf
+      - ${HOME}/data/openhab:/openhab/userdata
+      - ${HOME}/config/openhab:/openhab/addons
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+  grafana:
+    container_name: grafana
+    image: "grafana/grafana:latest"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ${HOME}/config/grafana:/var/lib/grafana
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+  influxdb:
+    container_name: influxdb
+    image: "influxdb:latest"
+    ports:
+      - "8086:8086"
+    volumes:
+      - ${HOME}/config/influxdb:/var/lib/influxdb
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+  node-red:
+    container_name: node-red
+    image: "nodered/node-red:latest"
+    ports:
+      - "1880:1880"
+    volumes:
+      - ${HOME}/config/node-red:/data
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+  portainer:
+    container_name: portainer
+    image: "portainer/portainer-ce:latest"
+    ports:
+      - "9000:9000"
+    volumes:
+      - ${HOME}/config/portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+
