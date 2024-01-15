@@ -1,0 +1,17 @@
+{
+	"web": {
+		"dir": "/vol/dist",
+		"port": 6502,
+		"interface": "0.0.0.0",
+		"socket": "/redis"
+	},
+	"redis": {
+		"host": "pcthink.local",
+		"port": 6379
+	},
+	"log-ignore": {
+		"prefix": "/data/log/ws2redis_",
+		"count": 10,
+		"limit": 1048576
+	}
+}
