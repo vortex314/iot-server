@@ -1,0 +1,9 @@
+filebeat.inputs:
+- type: mqtt
+  hosts: 
+    - tcp://192.168.0.40:1883
+    - ssl://secure_broker:8883
+  topics: 
+    - esp32_blue_scan/sensor/ble_devices_scanner/state
+output.elasticsearch:
+  hosts: ["https://172.19.0.2:9200"] 

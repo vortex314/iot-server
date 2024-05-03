@@ -1,0 +1,71 @@
+substitutions:
+  device_name: cam_3
+
+<<: !include limero.yaml
+
+esp32:
+  board: nodemcu-32s
+
+ota:
+  
+# OV2640 ESP32-CAM-MB+, OV2640 Camera
+# HK-ESP32-CAM-MB
+# Example configuration entry
+logger:
+
+# Enable Home Assistant API
+api:
+
+  
+# Example configuration entry
+esp32_camera:
+  name: esp32_cam3
+  external_clock:
+    pin: GPIO0
+    frequency: 20MHz
+  i2c_pins:
+    sda: GPIO26
+    scl: GPIO27
+  data_pins: [GPIO5, GPIO18, GPIO19, GPIO21, GPIO36, GPIO39, GPIO34, GPIO35]
+  vsync_pin: GPIO25
+  href_pin: GPIO23
+  pixel_clock_pin: GPIO22
+  power_down_pin: GPIO32
+  resolution: 1024x768
+  idle_framerate: 0.1fps
+  jpeg_quality: 10
+
+  
+#esp32_touch:
+#  setup_mode: True
+
+#binary_sensor:
+#  - platform: esp32_touch
+#    name: "boton camara esp"
+#    pin: GPIO13
+#    threshold: 0
+    
+#deep_sleep:
+#  wakeup_pin: GPIO12
+
+output:
+  # Register the  LED as a dimmable output ....
+  - platform: ledc
+    id: flash_led
+    pin: GPIO4
+#    inverted: True
+
+  # Register the  LED as a dimmable output ....
+  - platform: ledc
+    id: status_led
+    pin: GPIO33
+    inverted: True
+
+light:
+  # ... and then make a light out of it.
+  - platform: monochromatic
+    name: "camera3 LED"
+    output: flash_led
+  - platform: monochromatic
+    name: "camera3 status"
+    output: status_led

@@ -1,0 +1,33 @@
+
+substitutions:
+  device_name: esp32_blue
+
+<<: !include limero.yaml
+
+esp32:
+  board: nodemcu-32s
+
+status_led:
+  pin: GPIO2
+
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port 
+  id: mqtt_client
+  topic_prefix: 'src/${device_name}'
+  birth_message:
+    topic: src/${device_name}/sys/online
+    payload: 'true'
+  will_message:
+    topic: src/${device_name}/sys/online
+    payload: 'false'
+  log_topic: src/${device_name}/sys/log
+  discovery: false
+
+
+# Example configuration entry
+esp32_ble_tracker:
+
+text_sensor:
+  - platform: ble_scanner
+    name: "ble_scanner"

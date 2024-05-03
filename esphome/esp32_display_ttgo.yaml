@@ -1,0 +1,46 @@
+esphome:
+  name: esp1
+
+<<: !include limero.yaml
+
+esp32:
+  board: nodemcu-32s
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "1234567890"
+
+  
+spi:
+  clk_pin: GPIO18
+  mosi_pin: GPIO19
+
+display:
+  - platform: st7789v
+    model: LILYGO T-Embed 170X320
+    backlight_pin: GPIO4
+    cs_pin: GPIO5
+    dc_pin: GPIO16
+    reset_pin: GPIO23
+    lambda: |-
+      it.print(0, 0, id(font), "Hello World!");
+
+font:
+  - file: "gfonts://Roboto"
+    id: font
+    size: 20
+
+mqtt:
+  broker: 192.168.0.40
+  port: 1883 
+
+sensor:
+  - platform: mqtt_subscribe
+    name: "Treeshaker1"
+    id: shaker1
+    topic: dst/esp2/shaker/shake

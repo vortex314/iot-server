@@ -1,0 +1,35 @@
+esphome:
+  name: esp32_1
+
+wifi:
+<<: !include limero.yaml
+
+
+# Enable logging
+logger:
+
+ota:
+
+# Enable Home Assistant API
+api:
+
+esp32:
+  board: nodemcu-32s
+
+status_led:
+  pin: GPIO2
+
+
+mqtt:
+  broker: limero.ddns.net
+  port: 1883 
+
+sensor:
+  - platform: mqtt_subscribe
+    name: "HAL"
+    id: hal1
+    topic: dst/esp3/hal/hal1
+    qos: 0
+  - platform: esp32_hall
+    name: "ESP32 Hall Sensor"
+    update_interval: 2s

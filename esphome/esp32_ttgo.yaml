@@ -1,0 +1,62 @@
+
+substitutions:
+  device_name: esp32_ttgo
+
+<<: !include limero.yaml
+
+esp32:
+  board: nodemcu-32s
+
+status_led:
+  pin: GPIO2
+          
+# TTGO T-display ESP32 1.14 Inch
+# IPS ST7789V 1.14 Inch 135*240 resoluti
+
+spi:
+  clk_pin: GPIO18
+  mosi_pin: GPIO19
+
+display:
+  - platform: st7789v
+    model: TTGO TDisplay 135x240
+    backlight_pin: GPIO4
+    cs_pin: GPIO5
+    dc_pin: GPIO16
+    reset_pin: GPIO23
+    rotation: 270
+    data_rate: 80MHz
+    id: display1
+    update_interval: 0.5s
+    lambda: |-
+      it.print(0, 0, id(roboto), id(global_value).c_str());
+
+font:
+  - file: "gfonts://Roboto"
+    id: roboto
+    size: 20
+
+globals:
+  - id: global_value
+    type: std::string
+    restore_value: no
+    initial_value: '"${device_name}"'
+
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port 
+  id: mqtt_client
+  topic_prefix: 'src/${device_name}'
+  birth_message:
+    topic: src/${device_name}/sys/online
+    payload: 'true'
+  will_message:
+    topic: src/${device_name}/sys/online
+    payload: 'false'
+  log_topic: src/${device_name}/sys/log
+  discovery: false
+  on_message:
+    - topic: "dst/${device_name}/display/text"
+      then:
+        - lambda: |-
+            id(global_value)=x.c_str();
