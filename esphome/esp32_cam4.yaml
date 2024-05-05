@@ -19,7 +19,7 @@ api:
   
 # Example configuration entry
 esp32_camera:
-  name: esp32_cam4
+  name: $device_name
   external_clock:
     pin: GPIO0
     frequency: 20MHz
