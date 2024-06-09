@@ -1,0 +1,11 @@
+{
+  "redis": {
+    "host": "192.168.0.240",
+    "port": 6379
+  },
+  "log": {
+    "prefix": "/data/log/redisBrain_",
+    "count": 10,
+    "limit": 10000000
+  }
+}
