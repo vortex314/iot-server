@@ -1,0 +1,23 @@
+version: '3'
+services:
+  redis:
+    container_name: redis
+    image: "redis/redis-stack-server:stable"
+    ports:
+      - "6379:6379"
+    volumes:
+      - ${HOME}/data/redis:/data
+    restart: unless-stopped
+#    privileged: true
+    network_mode: host
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ${HOME}/config/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+
+

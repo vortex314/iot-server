@@ -1,1 +1,1 @@
-docker run --init --net=host -p 7447:7447/tcp -p 8000:8000/tcp -v $(pwd)/plugins:/root/.zenoh -d --restart=always eclipse/zenoh
+docker run --init --name=zenoh --net=host -i -v $(pwd):/zenoh -d --restart=always eclipse/zenoh -c /zenoh/config.json5
