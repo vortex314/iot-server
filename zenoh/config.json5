@@ -10,8 +10,8 @@
 
   /// The node's metadata (name, location, DNS name, etc.) Arbitrary JSON data not interpreted by zenoh and available in admin space @/<zid>/router, @/<zid>/peer or @/<zid>/client
   metadata: {
-    name: "strawberry",
-    location: "Penny Lane",
+    name: "pcthink",
+    location: "IOT-server",
   },
 
   /// Which endpoints to connect to. E.g. tcp/localhost:7447.
@@ -82,7 +82,10 @@
     /// or different lists for router, peer and client (e.g. endpoints: { router: ["tcp/[::]:7447"], peer: ["tcp/[::]:0"] }).
     ///"tcp/192.168.0.238:7447",
     /// See https://docs.rs/zenoh/latest/zenoh/config/struct.EndPoint.html
-    endpoints: { router: ["udp/[::]:7447","tcp/[::]:7447"], peer: ["tcp/[::]:7447","udp/224.0.0.123:7447"] },
+    endpoints: { 
+	router: ["udp/[::]:7447","tcp/[::]:7447"], 
+	peer: ["udp/224.0.0.123:7447"] 
+	},
    ///  endpoints: { router: ["udp/192.168.0.238:7447","tcp/127.0.0.1:7447","tcp/192.168.0.238:7447"], peer: ["tcp/[::]:0","udp/224.0.0.123:7447"] },
 
     /// Global listen configuration,
@@ -343,7 +346,7 @@
       /// Maximum number of sessions that can be simultaneously alive
       max_sessions: 1000,
       /// Maximum number of incoming links that are admitted per session
-      max_links: 1,
+      max_links: 5,
       /// Enables the LowLatency transport
       /// This option does not make LowLatency transport mandatory, the actual implementation of transport
       /// used will depend on Establish procedure and other party's settings
@@ -414,7 +417,7 @@
         /// Batch size in bytes is expressed as a 16bit unsigned integer.
         /// Therefore, the maximum batch size is 2^16-1 (i.e. 65535).
         /// The default batch size value is the maximum batch size: 65535.
-        batch_size: 2048,
+        batch_size: 65535, // was 2048 for esp32	
         /// Each zenoh link has a transmission queue that can be configured
         queue: {
           /// The size of each priority queue indicates the number of batches a given queue can contain.
