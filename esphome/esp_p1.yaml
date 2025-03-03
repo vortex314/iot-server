@@ -1,0 +1,122 @@
+
+substitutions:
+  name: dsmr-reader
+  friendly_name: DSMR Reader
+  device_name: esp_p1
+
+<<: !include limero.yaml
+
+esp32:
+  board: nodemcu-32s
+
+light:
+  - platform: status_led
+    name: "Switch state"
+    pin: GPIO02
+
+api:
+
+ota:
+
+logger:
+  # Serial logging is disabled by setting the logger baud rate to 0.
+  # Otherwise the logger will occupy the hardware UART, making it unavailable
+  # for receiving smart meter data on pin D7 (GPIO13).
+  baud_rate: 115200
+  level: VERBOSE
+  
+uart:
+  - id: p1_uart
+    rx_pin:
+      number: 4
+      inverted: true
+    baud_rate: 115200
+    rx_buffer_size: 1700
+
+dsmr:
+  uart_id: p1_uart
+  max_telegram_length: 1700
+
+  
+sensor:
+  - platform: dsmr
+    energy_delivered_tariff1:
+      name: ${friendly_name} Energy Delivered Tariff 1
+      state_class: total_increasing
+    energy_delivered_tariff2:
+      name: ${friendly_name} Energy Delivered Tariff 2
+      state_class: total_increasing
+    energy_returned_tariff1:
+      name: ${friendly_name} Energy Returned Tariff 1
+    energy_returned_tariff2:
+      name: ${friendly_name} Energy Returned Tariff 2
+    power_delivered:
+      name: ${friendly_name} Power Consumed
+    power_returned:
+      name: ${friendly_name} Power Returned
+    electricity_failures:
+      name: ${friendly_name} Electricity Failures
+    electricity_long_failures:
+      name: ${friendly_name} Electricity Long Failures
+    voltage_l1:
+      name: ${friendly_name} Voltage L1
+    voltage_l2:
+      name: ${friendly_name} Voltage L2
+    voltage_l3:
+      name: ${friendly_name} Voltage L3
+    current_l1:
+      name: ${friendly_name} Current L1
+    current_l2:
+      name: ${friendly_name} Current L2
+    current_l3:
+      name: ${friendly_name} Current L3
+    power_delivered_l1:
+      name: ${friendly_name} Power Delivered L1
+    power_delivered_l2:
+      name: ${friendly_name} Power Delivered L2
+    power_delivered_l3:
+      name: ${friendly_name} Power Delivered L3
+    power_returned_l1:
+      name: ${friendly_name} Power Returned L1
+    power_returned_l2:
+      name: ${friendly_name} Power Returned L2
+    power_returned_l3:
+      name: ${friendly_name} Power Returned L3
+    gas_delivered:
+      name: ${friendly_name} Gas Delivered
+    
+    
+text_sensor:
+  # Slimme meter
+  - platform: dsmr
+    identification:
+      name: "DSMR Identification"
+    p1_version:
+      name: "DSMR Version"
+    timestamp:
+      name: "DSMR Timestamp"
+    electricity_tariff:
+      name: "DSMR Tariff"
+    electricity_failure_log:
+      name: "DSMR Electricity Failure Log"
+    message_short:
+      name: "DSMR Message Short"
+    message_long:
+      name: "DSMR Message Long"
+
+    # Belgium
+    #p1_version_be:
+    #  name: ${friendly_name} Version BE
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port 
+  id: mqtt_client
+  topic_prefix: 'src/${device_name}'
+  birth_message:
+    topic: src/${device_name}/sys/online
+    payload: 'true'
+  will_message:
+    topic: src/${device_name}/sys/online
+    payload: 'false'
+  log_topic: src/${device_name}/sys/log
+  discovery: false
