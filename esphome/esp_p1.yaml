@@ -28,7 +28,7 @@ logger:
 uart:
   - id: p1_uart
     rx_pin:
-      number: 4
+      number: 16
       inverted: true
     baud_rate: 115200
     rx_buffer_size: 1700
