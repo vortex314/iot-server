@@ -1,0 +1,33 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+mqtt:
+  sensor:
+    - name: "Bytes received"
+      state_topic: "$SYS/broker/bytes/received"
+      unit_of_measurement: "bytes"
+
+sensor:
+  - platform: integration
+    source: "sensor.sma_2100461879_pactot"
+    name: "SMA 1 Produced Energy"
+    unit_prefix: k
+    round: 2
+  - platform: integration
+    source: "sensor.sma_2100466612_pactot"
+    name: "SMA 2 Produced Energy"
+    unit_prefix: k
+    round: 2

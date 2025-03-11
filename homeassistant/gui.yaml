@@ -1,0 +1,160 @@
+title: Home
+views:
+  - path: default_view
+    title: Home
+    cards:
+      - type: entities
+        entities:
+          - entity: person.lieven
+            secondary_info: last-updated
+      - type: weather-forecast
+        entity: weather.forecast_home
+        show_forecast: false
+      - type: gauge
+        entity: sensor.sma_2100461879_pactot
+        max: 5000
+        needle: true
+      - type: gauge
+        max: 5000
+        needle: true
+        entity: sensor.sma_2100466612_pactot
+      - type: entity
+        entity: sensor.sma_2100461879_uac1
+        name: AC Voltage
+        unit: V
+      - type: entity
+        entity: sensor.sma_2100466612_uac1
+        name: AC Voltage
+        unit: V
+      - type: entity
+        entity: binary_sensor.sma_2100461879_invgridrelay
+        state_color: true
+      - type: entity
+        entity: binary_sensor.sma_2100466612_invgridrelay
+        state_color: true
+      - chart_type: line
+        period: hour
+        days_to_show: 30
+        type: statistics-graph
+        entities:
+          - sensor.sma_2100461879_invtemperature
+          - sensor.sma_2100466612_invtemperature
+        stat_types:
+          - mean
+        title: SMA Temp
+      - show_state: true
+        show_name: true
+        camera_view: live
+        type: picture-entity
+        entity: camera.esp32_cam2
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - type: entities
+            entities:
+              - light.esp32_cam5_led
+              - light.esp32_cam5_status
+          - type: picture-entity
+            entity: camera.esp32_cam5
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - type: entities
+            entities:
+              - light.esp32_cam1_led
+              - light.esp32_cam1_status
+          - type: picture-entity
+            entity: camera.esp32_cam1
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - type: entities
+            entities:
+              - light.esp32_cam3_led
+              - light.esp32_cam3_status
+          - type: picture-entity
+            entity: camera.esp32_cam3
+      - type: grid
+        square: false
+        columns: 1
+        cards:
+          - type: entities
+            entities:
+              - light.esp32_cam4_led
+              - light.esp32_cam4_status
+          - type: picture-entity
+            entity: camera.esp32_cam4
+      - type: media-control
+        entity: media_player.tv_samsung_6_series_49
+      - type: media-control
+        entity: media_player.tv_samsung_6_series_49
+      - type: media-control
+        entity: media_player.family_room_tv
+  - theme: Backend-selected
+    title: Power
+    path: energy
+    badges: []
+    cards:
+      - type: gauge
+        entity: sensor.dsmr_reader_current_l1_2
+        needle: true
+        min: 0
+        max: 20
+      - type: gauge
+        entity: sensor.dsmr_reader_current_l2_2
+        needle: true
+        unit: A
+        min: 0
+        max: 20
+      - type: gauge
+        entity: sensor.dsmr_reader_current_l3_2
+        needle: true
+        min: 0
+        max: 20
+      - type: entities
+        entities:
+          - entity: sensor.dsmr_reader_power_delivered_l1_2
+          - entity: sensor.dsmr_reader_power_delivered_l2_2
+          - entity: sensor.dsmr_reader_power_delivered_l3_2
+        title: Power consumed
+      - type: grid
+        cards:
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dsmr_reader_voltage_l1_2
+            detail: 1
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dsmr_reader_voltage_l2_2
+            detail: 1
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dsmr_reader_voltage_l3_2
+            detail: 2
+      - type: entities
+        entities:
+          - entity: sensor.dsmr_reader_power_returned_l1_2
+          - entity: sensor.dsmr_reader_power_returned_l2_2
+          - entity: sensor.dsmr_reader_power_returned_l3_2
+        title: Power returned
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: sensor.dsmr_reader_power_consumed_2
+          - entity: sensor.dsmr_reader_power_returned_2
+        title: Glance
+        columns: 3
+  - theme: Backend-selected
+    title: Electricity
+    path: electricity
+    icon: mdi:power-plug
+    badges: []
+    cards: []
