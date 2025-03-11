@@ -2,7 +2,7 @@
 substitutions:
   name: dsmr-reader
   friendly_name: DSMR Reader
-  device_name: esp_p1
+  device_name: esp_p2
 
 <<: !include limero.yaml
 
@@ -117,4 +117,4 @@ mqtt:
     topic: src/${device_name}/sys/online
     payload: 'false'
   log_topic: src/${device_name}/sys/log
-  discovery: true
+  discovery: false

@@ -1,0 +1,9 @@
+{
+  "name": "Warning Light",
+  "device_class": "alert",
+  "state_topic": "SMA_2100466612",
+  "state_class": "measurement",
+  "value_template": "{{ value_json.UDC2}}",
+  "unique_id": "SMA_2100466612/UDC2",
+  "unit_of_measurement": "V"
+}
