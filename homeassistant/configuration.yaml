@@ -19,3 +19,15 @@ mqtt:
     - name: "Bytes received"
       state_topic: "$SYS/broker/bytes/received"
       unit_of_measurement: "bytes"
+
+sensor:
+  - platform: integration
+    source: "sensor.sma_2100461879_pactot"
+    name: "SMA 1 Produced Energy"
+    unit_prefix: k
+    round: 2
+  - platform: integration
+    source: "sensor.sma_2100466612_pactot"
+    name: "SMA 2 Produced Energy"
+    unit_prefix: k
+    round: 2
