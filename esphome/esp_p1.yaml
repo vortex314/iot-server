@@ -20,7 +20,7 @@ ota:
 
 logger:
   baud_rate: 115200
-  level: VERBOSE
+  level: INFO
   
 uart:
   - id: p1_uart
