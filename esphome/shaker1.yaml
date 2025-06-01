@@ -1,0 +1,144 @@
+esphome:
+  name: shaker1  
+  
+substitutions:
+  device_name: shaker1
+
+api:
+
+# ports
+# GPIO 16 is used for the red led
+# GPIO 2 is used for the status LED , blue on the nodemcu
+# GPIO 15 is used for the relay
+# GPIO 0 is used for the button
+
+esp8266:
+  board: nodemcuv2
+  framework:
+    version: recommended
+
+<<: !include ../../../limero.yaml
+
+ota:
+  - platform: esphome
+mqtt:
+  broker: limero.be
+  port: 1883 
+  id: mqtt_client
+  topic_prefix: 'src/${device_name}'
+  birth_message:
+    topic: src/${device_name}/sys/online
+    payload: 'true'
+  will_message:
+    topic: src/${device_name}/sys/online
+    payload: 'false'
+  log_topic: src/${device_name}/sys/log
+  discovery: true
+  on_message:
+    - topic: dst/shaker1/shake/trigger
+      then:
+        - logger.log: "Received shake trigger message"
+        - script.execute: cycle_relay
+
+time:
+  - platform: sntp
+    id: my_time
+    timezone: Europe/Brussels
+    on_time:
+      - seconds: 0
+        minutes: 30
+        hours: 5
+        then:
+          - globals.set:
+              id: daylight_enable
+              value: 'true'
+          - logger.log: "Daylight enable switch turned ON at 05:20"
+      - seconds: 0
+        minutes: 30
+        hours: 21
+        then:
+          - globals.set:
+              id: daylight_enable
+              value: 'false'
+          - logger.log: "Daylight enable switch turned OFF at 22:00"
+        
+status_led:
+  pin: GPIO2
+
+output:
+  - platform: gpio
+    pin: GPIO15
+    id: relay
+  - platform: gpio
+    pin: GPIO16
+    id: red_led
+    inverted: true
+#  - platform: gpio
+#    pin: GPIO2
+#    id: blue_led
+#    inverted: true
+
+globals:
+  - id: daylight_enable
+    type: bool
+    initial_value: 'true'
+    restore_value: true
+  - id: relay_duration
+    type: int
+    initial_value: '3000'  # Duration in milliseconds for which the relay should be activated
+  - id: relay_interval
+    type: int
+    initial_value: '300'  # Interval in seconds for the pump cycle
+
+interval:
+  - interval: 3min
+    then:
+      - logger.log: 
+          format: "Current value of daylight_enable: %d" 
+          args: [ id(daylight_enable) ]
+      - if:
+          condition:
+            lambda: return id(daylight_enable) == true;
+          then:
+            - script.execute: cycle_relay
+          else:
+            - logger.log: "Daylight enable switch is OFF, not activating relay or red LED"
+
+script:
+  - id: cycle_relay
+    mode: restart
+    then:
+      - output.turn_on: relay
+      - output.turn_on: red_led
+      - logger.log: "Relay and red LED turned ON due to daylight enable switch"
+      - delay: !lambda return id(relay_duration);
+      - output.turn_off: relay
+      - output.turn_off: red_led
+      - logger.log: "Relay and red LED turned OFF after 3 seconds"
+      - switch.turn_off: activate_relay
+
+switch:
+  - platform: template
+    name: "Switch Relay shaker1"
+    id: activate_relay
+    turn_on_action:
+      - script.execute: cycle_relay
+  - platform: template
+    name: "Daylight Shaker1"
+    lambda: |-
+      if (id(daylight_enable)) {
+        return true;
+      } else {
+        return false;
+        }
+    turn_on_action:
+      - globals.set:
+          id: daylight_enable
+          value: 'true'
+      - logger.log: "Daylight enable switch turned ON"
+    turn_off_action:
+      - globals.set:
+          id: daylight_enable
+          value: 'false'
+      - logger.log: "Daylight enable switch turned OFF"
+    icon: "mdi:weather-sunny"
