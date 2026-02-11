@@ -4,7 +4,7 @@ substitutions:
   friendly_name: DSMR Reader
   device_name: esp_p1
 
-<<: !include limero.yaml
+<<: !include /home/lieven/limero.yaml
 
 esp32:
   board: nodemcu-32s
@@ -17,6 +17,7 @@ light:
 api:
 
 ota:
+  platform: esphome
 
 logger:
   baud_rate: 115200

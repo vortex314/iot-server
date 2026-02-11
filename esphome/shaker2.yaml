@@ -3,6 +3,9 @@ esphome:
   
 substitutions:
   device_name: shaker2
+  device_internal_name: shaker2
+  device_sampling_time: 10s  # Adjust the sampling time as needed
+  friendly_name: Shaker 2
 
 api:
 
@@ -85,10 +88,10 @@ globals:
     restore_value: true
   - id: relay_duration
     type: int
-    initial_value: '3000'  # Duration in milliseconds for which the relay should be activated
+    initial_value: '2000'  # Duration in milliseconds for which the relay should be activated
   - id: relay_interval
     type: int
-    initial_value: '60'  # Interval in seconds for the pump cycle
+    initial_value: '300'  # Interval in seconds for the pump cycle
 
 interval:
   - interval: 3min
@@ -118,6 +121,14 @@ script:
       - switch.turn_off: activate_relay
 
 switch:
+  - platform: restart
+    name: "Restart"
+    id: device_restart
+  
+  - platform: safe_mode
+    name: Use Safe Mode
+    id: device_safe_mode
+
   - platform: template
     name: "Switch Relay shaker2"
     id: activate_relay
@@ -142,3 +153,91 @@ switch:
           value: 'false'
       - logger.log: "Daylight enable switch turned OFF"
     icon: "mdi:weather-sunny"
+sensor:  # WiFi
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    id: ${device_internal_name}_wifi_signal_sensor
+    update_interval: ${device_sampling_time}
+
+  # Uptime
+  - platform: uptime
+    name: "Uptime Sensor"
+    id: ${device_internal_name}_uptime_sensor
+    update_interval: ${device_sampling_time}
+    internal: true
+    on_raw_value:
+      then:
+        - text_sensor.template.publish:
+            id: ${device_internal_name}_uptime_human
+            state: !lambda |-
+              int seconds = round(id(${device_internal_name}_uptime_sensor).raw_state);
+              int days = seconds / (24 * 3600);
+              seconds = seconds % (24 * 3600);
+              int hours = seconds / 3600;
+              seconds = seconds % 3600;
+              int minutes = seconds /  60;
+              seconds = seconds % 60;
+              return (
+                (days ? to_string(days) + "d " : "") +
+                (hours ? to_string(hours) + "h " : "") +
+                (minutes ? to_string(minutes) + "m " : "") +
+                (to_string(seconds) + "s")
+              ).c_str();
+binary_sensor:
+  # ESP Status
+  - platform: status
+    name: "Status"
+    id: ${device_internal_name}_status
+
+text_sensor:
+  #-------------------------------------------------------------------------------
+  # ESP32 internal sensors
+  #-------------------------------------------------------------------------------
+  - platform: wifi_info
+    ip_address:
+      name: IP Address
+      id: ${device_internal_name}_ip_address
+    ssid:
+      name: Connected SSID
+      id: ${device_internal_name}_connected_ssid
+    mac_address:
+      name: Mac Wifi Address
+      id: ${device_internal_name}_mac_address
+
+  - platform: version
+    name: "ESPHome Version"
+    hide_timestamp: true
+
+    # Example configuration entry
+  - platform: wifi_info
+    ip_address:
+      name: ESP IP Address
+      address_0:
+        name: ESP IP Address 0
+      address_1:
+        name: ESP IP Address 1
+      address_2:
+        name: ESP IP Address 2
+      address_3:
+        name: ESP IP Address 3
+      address_4:
+        name: ESP IP Address 4
+    ssid:
+      name: ESP Connected SSID
+    bssid:
+      name: ESP Connected BSSID
+    mac_address:
+      name: ESP Mac Wifi Address
+    scan_results:
+      name: ESP Latest Scan Results
+    dns_address:
+      name: ESP DNS Address
+
+  #-------------------------------------------------------------------------------
+  # Custom Text sensors
+  #-------------------------------------------------------------------------------
+  - platform: template
+    name: Uptime Human Readable
+    id: ${device_internal_name}_uptime_human
+    icon: mdi:clock-start
+

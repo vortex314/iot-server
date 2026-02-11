@@ -1,0 +1,35 @@
+esphome:
+  name: motor
+
+<<: !include /home/lieven/limero.yaml
+
+# Enable logging
+logger:
+
+ota:
+
+esp8266:
+  board: nodemcuv2
+  framework:
+    version: recommended
+
+mqtt:
+  broker: limero.ddns.net
+  port: 1883 
+
+status_led:
+  pin: GPIO2
+
+output:
+  - platform: gpio
+    pin: D1
+    id: direction_pin
+  - platform: esp8266_pwm  # or ledc if on ESP32
+    pin: D2
+    id: speed_pin
+
+sensor:
+  - platform: mqtt_subscribe
+    name: "Treeshaker1"
+    id: shaker1
+    topic: dst/esp2/shaker/shake

@@ -31,3 +31,17 @@ homeassistant/sensor/SMA_2100466612/UDC2/config
 ```
 ### Birth message
 homeasssitant/status 
+
+# ESP8266 with L293D motor driver
+Hackaday article : https://hackaday.io/project/8856-incubator-controller/log/29291-node-mcu-motor-shield
+![base](./doc/esp8266_l293d_base.jpeg)
+![top](./doc/esp8266_l293d_top.jpeg)
+![connection](./doc/esp8266_l293d.jpeg)
+
+# ESP32 CAM board
+- tricky boot connect 
+![schema](./doc/esp32_cam.png)
+![drv8871](./doc/drv8871.png
+)
+
+

@@ -1,16 +1,18 @@
 substitutions:
   device_name: esp32_cam1
 
-<<: !include limero.yaml
+<<: !include /home/lieven/limero.yaml
 
 esp32:
   board: nodemcu-32s
 
 ota:
-  
+  platform: esphome
+
 # OV2640 ESP32-CAM-MB+, OV2640 Camera
 # HK-ESP32-CAM-MB
 # Example configuration entry
+
 logger:
 
 # Enable Home Assistant API
@@ -31,7 +33,7 @@ esp32_camera:
   href_pin: GPIO23
   pixel_clock_pin: GPIO22
   power_down_pin: GPIO32
-  resolution: 1024x768
+  resolution: 1600x1200
   idle_framerate: 0.1fps
   jpeg_quality: 10
 

@@ -1,0 +1,181 @@
+esphome:
+  name: chicken-coop 
+  on_boot:
+    priority: -10
+    then:
+      - wait_until:
+          sun.is_above_horizon:
+      - cover.open: chicken_door
+  platformio_options:
+    build_flags:
+      - -DBOARD_HAS_PSRAM
+      - -mfix-esp32-psram-cache-issue
+  
+substitutions:
+  device_name: chicken-coop
+
+<<: !include /home/lieven/limero.yaml
+
+esp32:
+  board: esp32cam
+  framework:
+    type: arduino
+
+ota:
+  platform: esphome
+  
+# OV2640 ESP32-CAM-MB+, OV2640 Camera
+# HK-ESP32-CAM-MB
+# Example configuration entry
+logger:
+
+# Enable Home Assistant API
+api:
+
+  
+# Example configuration entry
+esp32_camera:
+  name: $device_name
+  external_clock:
+    pin: GPIO0
+    frequency: 10MHz
+  i2c_pins:
+    sda: GPIO26
+    scl: GPIO27
+  data_pins: [GPIO5, GPIO18, GPIO19, GPIO21, GPIO36, GPIO39, GPIO34, GPIO35]
+  vsync_pin: GPIO25
+  href_pin: GPIO23
+  pixel_clock_pin: GPIO22
+  power_down_pin: GPIO32
+  resolution: SVGA
+  idle_framerate: 1fps
+  jpeg_quality: 12
+
+  
+#esp32_touch:
+#  setup_mode: True
+
+#binary_sensor:
+#  - platform: esp32_touch
+#    name: "boton camara esp"
+#    pin: GPIO15
+#    threshold: 0
+    
+#deep_sleep:
+#  wakeup_pin: GPIO12
+
+output:
+  # Register the  LED as a dimmable output ....
+  - platform: ledc
+    id: flash_led
+    pin: GPIO4
+#    inverted: True
+
+  # Register the  LED as a dimmable output ....
+  - platform: ledc
+    id: status_led
+    pin: GPIO33
+    inverted: True
+
+light:
+  # ... and then make a light out of it.
+  - platform: monochromatic
+    name: "chicken_coop LED"
+    output: flash_led
+  - platform: monochromatic
+    name: "chicken_coop status"
+    output: status_led
+
+switch:
+  - platform: gpio
+    pin: GPIO12
+    id: pin_12
+    interlock: [pin_13] # Safety: Prevents 12 and 13 being 1 at the same time
+    restore_mode: ALWAYS_OFF
+    internal: true # Hides individual switches from Home Assistant UI
+
+  - platform: gpio
+    pin: GPIO13
+    id: pin_13
+    interlock: [pin_12]
+    restore_mode: ALWAYS_OFF
+    internal: true
+
+
+cover:
+  - platform: time_based
+    name: "Chicken Coop Door"
+    id: chicken_door
+    
+    # Open Logic: GPIO 12 = 1, GPIO 13 = 0
+    open_action:
+      - switch.turn_off: pin_13
+      - switch.turn_on: pin_12
+    open_duration: 10s # Set this to the time it takes to fully open
+    
+    # Close Logic: GPIO 12 = 0, GPIO 13 = 1
+    close_action:
+      - switch.turn_off: pin_12
+      - switch.turn_on: pin_13
+    close_duration: 10s # Set this to the time it takes to fully close
+    
+    # Stop Logic: Both pins = 0
+    stop_action:
+      - switch.turn_off: pin_12
+      - switch.turn_off: pin_13
+
+# 1. Provide your location (Check Google Maps for your Lat/Lon)
+sun:
+  latitude: 50.8503 
+  longitude: 4.3517
+  id: sun_data
+  # Triggers are nested directly under the sun component
+  on_sunrise:
+    - elevation: -6°
+      then:
+        - logger.log: "It is first daylight! Opening the door."
+        - cover.open: chicken_door
+  on_sunset:
+    - elevation: -6°
+      then:
+        - logger.log: "It is getting dark! Closing the door."
+        - cover.close: chicken_door
+
+# 2. Automation Logic
+
+
+time:
+  - platform: sntp
+    id: sntp_time
+
+sensor:
+  - platform: adc
+    pin: GPIO34 # Change to your specific pin
+    name: "Battery Voltage"
+    update_interval: 60s
+    unit_of_measurement: "V"
+    filters:
+      # Multiplier = (R1 + R2) / R2. 
+      # Example: (100 + 22) / 22 = 5.545
+      - multiply: 5.545
+    id: batt_voltage
+
+  - platform: template
+    name: "Battery State of Charge"
+    unit_of_measurement: "%"
+    device_class: battery
+    lambda: |-
+      return id(batt_voltage).state;
+    filters:
+      - calibrate_linear:
+          # Voltage -> Percentage (Approximate for Li-ion 3S)
+          - 9.0 -> 0
+          - 10.8 -> 10
+          - 11.1 -> 20
+          - 11.5 -> 50
+          - 12.0 -> 85
+          - 12.6 -> 100
+      - clamp:
+          min_value: 0
+          max_value: 100
+
