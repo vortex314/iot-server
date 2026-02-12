@@ -234,11 +234,11 @@
       (net 2 "GND") (pinfunction "GND_in") (pintype "input") (tstamp 237a11ac-1f73-418f-8b15-ef0a0408ff0f))
     (pad "4" thru_hole circle (at 0 -13.208) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask")
       (net 2 "GND") (pinfunction "GND_in") (pintype "input") (tstamp 9354ee0f-75e0-4df8-8399-3e62a2eb5df9))
-    (pad "5" thru_hole circle locked (at 18.542 -13.208) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask")
+    (pad "5" thru_hole circle (at 18.542 -13.208) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask")
       (net 2 "GND") (pinfunction "GND_Out") (pintype "output") (tstamp c5d9cff4-f164-41ef-b65d-530931c2a8b5))
     (pad "6" thru_hole circle (at 18.542 -10.668) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask")
       (net 2 "GND") (pinfunction "GND_out") (pintype "input") (tstamp 72845936-9db0-4efb-8b48-e89cfad66e71))
-    (pad "7" thru_hole circle locked (at 18.542 -2.54) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask")
+    (pad "7" thru_hole circle (at 18.542 -2.54) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask")
       (net 1 "+5V") (pinfunction "Vcc_out") (pintype "input") (tstamp 632816b3-e391-44f8-80ff-eba1dff2b70d))
     (pad "8" thru_hole circle (at 18.542 0.127) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask")
       (net 1 "+5V") (pinfunction "Vcc_out") (pintype "input") (tstamp 5480b3f3-7428-4b61-891e-6ad1183d40cf))
@@ -387,6 +387,9 @@
       (rotate (xyz 0 0 0))
     )
   )
+
+  (gr_rect (start 88.9 33.02) (end 177.8 88.9)
+    (stroke (width 0.05) (type default)) (fill none) (layer "Edge.Cuts") (tstamp af218adb-5d9b-4731-bbfb-e0cb5068d997))
 
   (segment (start 93.98 45.88) (end 93.98 40.64) (width 0.2) (layer "F.Cu") (net 2) (tstamp 03bdcc53-93a6-4ae8-924e-473b11227937))
   (segment (start 107.569 38.1) (end 110.998 41.529) (width 0.2) (layer "F.Cu") (net 2) (tstamp 5f7f643f-e6dc-49fd-ba91-135e2cbb2964))
