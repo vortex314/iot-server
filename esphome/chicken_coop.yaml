@@ -74,7 +74,7 @@ output:
   # Register the  LED as a dimmable output ....
   - platform: ledc
     id: status_led
-    pin: GPIO33
+    pin: GPIO15
     inverted: True
 
 light:
@@ -150,7 +150,7 @@ time:
 
 sensor:
   - platform: adc
-    pin: GPIO34 # Change to your specific pin
+    pin: GPIO33 # Change to your specific pin
     name: "Battery Voltage"
     update_interval: 60s
     unit_of_measurement: "V"
