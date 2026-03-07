@@ -1,4 +1,4 @@
-23040240499283298
+23042013423132840
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -63412,6 +63412,13 @@ Yellow 5381 Series LED
 0
 2
 2
+Library
+8871-B
+
+
+0
+10
+9
 Library
 DC-DC converter MP1584
 
