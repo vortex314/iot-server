@@ -70,13 +70,11 @@
     (property "ki_description" "Motor driver module" (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (symbol "DRV8871_Module_0_1"
+    (symbol "DRV8871_Module_1_1"
       (rectangle (start 0 5.08) (end 15.24 -11.43)
         (stroke (width 0) (type default))
         (fill (type none))
       )
-    )
-    (symbol "DRV8871_Module_1_1"
       (pin input line (at -2.54 2.54 0) (length 2.54)
         (name "IN2" (effects (font (size 1.27 1.27))))
         (number "1" (effects (font (size 1.27 1.27))))
