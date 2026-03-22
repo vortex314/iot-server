@@ -10,6 +10,8 @@ esphome:
     build_flags:
       - -DBOARD_HAS_PSRAM
       - -mfix-esp32-psram-cache-issue
+
+psram:
   
 substitutions:
   device_name: chicken-coop
@@ -103,14 +105,12 @@ switch:
     id: pin_12
     interlock: [pin_13] # Safety: Prevents 12 and 13 being 1 at the same time
     restore_mode: ALWAYS_OFF
-    internal: true # Hides individual switches from Home Assistant UI
 
   - platform: gpio
     pin: GPIO13
     id: pin_13
     interlock: [pin_12]
     restore_mode: ALWAYS_OFF
-    internal: true
 
 
 cover:
@@ -165,10 +165,12 @@ sensor:
     name: "Battery Voltage"
     update_interval: 60s
     unit_of_measurement: "V"
+    attenuation: 11db  # Add this line
     filters:
       # Multiplier = (R1 + R2) / R2. 
-      # Example: (100 + 22) / 22 = 5.545
-      - multiply: 5.545
+      # 
+      # Example: (100 + 27) / 27 = 4.7
+      - multiply: 4.70
     id: batt_voltage
 
   - platform: template
