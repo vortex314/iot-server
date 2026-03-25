@@ -39,12 +39,12 @@ api:
 esp32_camera:
   # ... other settings ...
   # Increase brightness (default is 0, range -2 to 2 or higher)
-  brightness: 0
+  brightness: 2
   # Increase contrast (default is 0, range -2 to 2 or higher)
   contrast: 2
   # Raise gain ceiling (ISO) to improve low-light sensitivity
   # Options: 2x, 4x, 8x, 16x, 32x, 64x, 128x
-  agc_gain_ceiling: 64x
+  agc_gain_ceiling: 128x
   # Set automatic exposure to improve lighting
   aec2: true
   ae_level: 2
