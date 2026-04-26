@@ -1,0 +1,114 @@
+esphome:
+  name: chicken-door  
+  on_boot:
+    priority: -10
+    then:
+      - wait_until:
+          sun.is_above_horizon:
+      - cover.open: chicken_door
+  
+substitutions:
+  device_name: chicken-door
+
+api:
+
+# ports
+# GPIO 16 is used for the red led
+# GPIO 2 is used for the status LED , blue on the nodemcu
+# GPIO 15 is used for the relay
+# GPIO 0 is used for the button
+
+<<: !include /home/lieven/limero.yaml
+
+esp32:
+  board: nodemcu-32s
+
+ota:
+  - platform: esphome
+mqtt:
+  broker: limero.be
+  port: 1883 
+  id: mqtt_client
+  topic_prefix: 'src/${device_name}'
+  birth_message:
+    topic: src/${device_name}/sys/online
+    payload: 'true'
+  will_message:
+    topic: src/${device_name}/sys/online
+    payload: 'false'
+  log_topic: src/${device_name}/sys/log
+  discovery: true
+  on_message:
+    - topic: dst/shaker1/shake/trigger
+      then:
+        - logger.log: "Received shake trigger message"
+#        - script.execute: cycle_relay
+
+        
+status_led:
+  pin: GPIO2
+
+
+switch:
+  - platform: gpio
+    pin: GPIO12
+    id: pin_12
+    interlock: [pin_13] # Safety: Prevents 12 and 13 being 1 at the same time
+    restore_mode: ALWAYS_OFF
+    internal: true # Hides individual switches from Home Assistant UI
+
+  - platform: gpio
+    pin: GPIO13
+    id: pin_13
+    interlock: [pin_12]
+    restore_mode: ALWAYS_OFF
+    internal: true
+
+
+cover:
+  - platform: time_based
+    name: "Chicken Coop Door"
+    id: chicken_door
+    
+    # Open Logic: GPIO 12 = 1, GPIO 13 = 0
+    open_action:
+      - switch.turn_off: pin_13
+      - switch.turn_on: pin_12
+    open_duration: 10s # Set this to the time it takes to fully open
+    
+    # Close Logic: GPIO 12 = 0, GPIO 13 = 1
+    close_action:
+      - switch.turn_off: pin_12
+      - switch.turn_on: pin_13
+    close_duration: 10s # Set this to the time it takes to fully close
+    
+    # Stop Logic: Both pins = 0
+    stop_action:
+      - switch.turn_off: pin_12
+      - switch.turn_off: pin_13
+
+# 1. Provide your location (Check Google Maps for your Lat/Lon)
+sun:
+  latitude: 50.8503 
+  longitude: 4.3517
+  id: sun_data
+  # Triggers are nested directly under the sun component
+  on_sunrise:
+    - elevation: -6°
+      then:
+        - logger.log: "It is first daylight! Opening the door."
+        - cover.open: chicken_door
+  on_sunset:
+    - elevation: -6°
+      then:
+        - logger.log: "It is getting dark! Closing the door."
+        - cover.close: chicken_door
+
+# 2. Automation Logic
+
+
+time:
+  - platform: sntp
+    id: sntp_time
+
+
