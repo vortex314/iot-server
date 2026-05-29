@@ -1,0 +1,1458 @@
+INFO ESPHome 2025.5.1
+INFO Reading configuration shaker1.yaml...
+INFO Starting log output from shaker1.local using esphome API
+INFO Successfully connected to shaker1 @ 192.168.0.188 in 0.051s
+INFO Successful handshake with shaker1 @ 192.168.0.188 in 0.080s
+[16:40:37][I][app:115]: ESPHome version 2025.5.1 compiled on May 29 2026, 16:34:00
+[16:40:37][C][status_led:019]: Status LED:
+[16:40:37][C][status_led:020]:   Pin: GPIO2
+[16:40:37][C][wifi:600]: WiFi:
+[16:40:37][C][wifi:428]:   Local MAC: 5C:CF:7F:07:27:40
+[16:40:37][C][wifi:433]:   SSID: 'Merckx2'
+[16:40:37][C][wifi:436]:   IP Address: 192.168.0.188
+[16:40:37][C][wifi:439]:   BSSID: 68:FF:7B:AE:D8:54
+[16:40:37][C][wifi:441]:   Hostname: 'shaker1'
+[16:40:37][C][wifi:443]:   Signal strength: -82 dB ▂▄▆█
+[16:40:37][C][wifi:447]:   Channel: 1
+[16:40:37][C][wifi:448]:   Subnet: 255.255.255.0
+[16:40:37][C][wifi:449]:   Gateway: 192.168.0.1
+[16:40:37][C][wifi:450]:   DNS1: 195.130.131.2
+[16:40:37][C][wifi:451]:   DNS2: 195.130.130.2
+[16:40:37][C][logger:224]: Logger:
+[16:40:37][C][logger:225]:   Max Level: DEBUG
+[16:40:37][C][logger:226]:   Initial Level: DEBUG
+[16:40:37][C][logger:228]:   Log Baud Rate: 115200
+[16:40:37][C][logger:229]:   Hardware UART: UART0
+[16:40:37][C][gpio.output:010]: GPIO Binary Output:
+[16:40:37][C][gpio.output:011]:   Pin: GPIO15
+[16:40:37][C][gpio.output:010]: GPIO Binary Output:
+[16:40:37][C][gpio.output:011]:   Pin: GPIO16
+[16:40:37][C][gpio.output:012]:   Inverted: YES
+[16:40:37][C][template.text_sensor:020]: Template Sensor 'Uptime Human Readable'
+[16:40:37][C][template.text_sensor:020]:   Icon: 'mdi:clock-start'
+[16:40:37][C][uptime.sensor:033]: Uptime Sensor 'Uptime Sensor'
+[16:40:37][C][uptime.sensor:033]:   Device Class: 'duration'
+[16:40:37][C][uptime.sensor:033]:   State Class: 'total_increasing'
+[16:40:37][C][uptime.sensor:033]:   Unit of Measurement: 's'
+[16:40:37][C][uptime.sensor:033]:   Accuracy Decimals: 0
+[16:40:37][C][uptime.sensor:033]:   Icon: 'mdi:timer-outline'
+[16:40:37][C][uptime.sensor:034]:   Type: Seconds
+[16:40:37][C][template.switch:068]: Template Switch 'Switch Relay shaker1'
+[16:40:37][C][template.switch:090]:   Restore Mode: always OFF
+[16:40:37][C][template.switch:057]:   Optimistic: NO
+[16:40:37][C][template.switch:068]: Template Switch 'Daylight Shaker1'
+[16:40:37][C][template.switch:070]:   Icon: 'mdi:weather-sunny'
+[16:40:37][C][template.switch:090]:   Restore Mode: always OFF
+[16:40:37][C][template.switch:057]:   Optimistic: NO
+[16:40:37][C][restart:068]: Restart Switch 'Restart'
+[16:40:37][C][restart:070]:   Icon: 'mdi:restart'
+[16:40:37][C][restart:090]:   Restore Mode: always OFF
+[16:40:37][C][safe_mode.switch:068]: Safe Mode Switch 'Use Safe Mode'
+[16:40:37][C][safe_mode.switch:070]:   Icon: 'mdi:restart-alert'
+[16:40:37][C][safe_mode.switch:090]:   Restore Mode: always OFF
+[16:40:37][C][status:034]: Status Binary Sensor 'Status'
+[16:40:37][C][status:034]:   Device Class: 'connectivity'
+[16:40:37][C][wifi_info:014]: WifiInfo Mac Address 'Mac Wifi Address'
+[16:40:37][C][version.text_sensor:021]: Version Text Sensor 'ESPHome Version'
+[16:40:37][C][version.text_sensor:021]:   Icon: 'mdi:new-box'
+[16:40:38][C][sntp:042]: SNTP Time:
+[16:40:38][C][sntp:045]:   Server 0: '0.pool.ntp.org'
+[16:40:38][C][sntp:045]:   Server 1: '1.pool.ntp.org'
+[16:40:38][C][sntp:045]:   Server 2: '2.pool.ntp.org'
+[16:40:38][C][mdns:120]: mDNS:
+[16:40:38][C][mdns:121]:   Hostname: shaker1
+[16:40:38][C][esphome.ota:073]: Over-The-Air updates:
+[16:40:38][C][esphome.ota:074]:   Address: shaker1.local:8266
+[16:40:38][C][esphome.ota:075]:   Version: 2
+[16:40:38][C][safe_mode:018]: Safe Mode:
+[16:40:38][C][safe_mode:019]:   Boot considered successful after 60 seconds
+[16:40:38][C][safe_mode:021]:   Invoke after 10 boot attempts
+[16:40:38][C][safe_mode:022]:   Remain in safe mode for 300 seconds
+[16:40:38][C][api:170]: API Server:
+[16:40:38][C][api:171]:   Address: shaker1.local:6053
+[16:40:38][C][api:178]:   Using noise encryption: NO
+[16:40:38][C][mqtt:152]: MQTT:
+[16:40:38][C][mqtt:153]:   Server Address: limero.ddns.net:1883 (78.21.115.195)
+[16:40:38][C][mqtt:155]:   Username: ''
+[16:40:38][C][mqtt:156]:   Client ID: 'shaker1-5ccf7f072740'
+[16:40:38][C][mqtt:157]:   Clean Session: NO
+[16:40:38][C][mqtt:159]:   Discovery IP enabled
+[16:40:38][C][mqtt:162]:   Discovery prefix: 'homeassistant'
+[16:40:38][C][mqtt:163]:   Discovery retain: YES
+[16:40:38][C][mqtt:165]:   Topic Prefix: 'src/shaker1'
+[16:40:38][C][mqtt:167]:   Log Topic: 'src/shaker1/sys/log'
+[16:40:38][C][mqtt:170]:   Availability: 'src/shaker1/sys/online'
+[16:40:38][C][wifi_signal.sensor:010]: WiFi Signal 'WiFi Signal Sensor'
+[16:40:38][C][wifi_signal.sensor:010]:   Device Class: 'signal_strength'
+[16:40:38][C][wifi_signal.sensor:010]:   State Class: 'measurement'
+[16:40:38][C][wifi_signal.sensor:010]:   Unit of Measurement: 'dBm'
+[16:40:38][C][wifi_signal.sensor:010]:   Accuracy Decimals: 0
+[16:40:38][C][wifi_info:012]: WifiInfo SSID 'Connected SSID'
+[16:40:38][C][wifi_info:010]: WifiInfo IPAddress 'IP Address'
+[16:40:38][C][mqtt:724]: MQTT Message Trigger:
+[16:40:38][C][mqtt:725]:   Topic: 'dst/shaker1/shake/trigger'
+[16:40:38][C][mqtt:726]:   QoS: 0
+[16:40:38][C][mqtt.switch:041]: MQTT Switch 'Restart': 
+[16:40:38][C][mqtt.switch:042]:   State Topic: 'src/shaker1/switch/restart/state'
+[16:40:38][C][mqtt.switch:042]:   Command Topic: 'src/shaker1/switch/restart/command'
+[16:40:38][C][mqtt.switch:041]: MQTT Switch 'Use Safe Mode': 
+[16:40:38][C][mqtt.switch:042]:   State Topic: 'src/shaker1/switch/use_safe_mode/state'
+[16:40:38][C][mqtt.switch:042]:   Command Topic: 'src/shaker1/switch/use_safe_mode/command'
+[16:40:38][C][mqtt.switch:041]: MQTT Switch 'Switch Relay shaker1': 
+[16:40:38][C][mqtt.switch:042]:   State Topic: 'src/shaker1/switch/switch_relay_shaker1/state'
+[16:40:38][C][mqtt.switch:042]:   Command Topic: 'src/shaker1/switch/switch_relay_shaker1/command'
+[16:40:38][C][mqtt.switch:041]: MQTT Switch 'Daylight Shaker1': 
+[16:40:38][C][mqtt.switch:042]:   State Topic: 'src/shaker1/switch/daylight_shaker1/state'
+[16:40:38][C][mqtt.switch:042]:   Command Topic: 'src/shaker1/switch/daylight_shaker1/command'
+[16:40:38][C][mqtt.sensor:028]: MQTT Sensor 'WiFi Signal Sensor':
+[16:40:38][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/wifi_signal_sensor/state'
+[16:40:38][C][mqtt.binary_sensor:022]: MQTT Binary Sensor 'Status':
+[16:40:38][C][mqtt.binary_sensor:023]:   State Topic: 'src/shaker1/sys/online'
+[16:40:38][C][mqtt.text_sensor:027]: MQTT Text Sensor 'Connected SSID':
+[16:40:38][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/connected_ssid/state'
+[16:40:38][C][mqtt.text_sensor:027]: MQTT Text Sensor 'Mac Wifi Address':
+[16:40:38][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/mac_wifi_address/state'
+[16:40:38][C][mqtt.text_sensor:027]: MQTT Text Sensor 'IP Address':
+[16:40:38][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/ip_address/state'
+[16:40:38][C][mqtt.text_sensor:027]: MQTT Text Sensor 'ESPHome Version':
+[16:40:38][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/esphome_version/state'
+[16:40:38][C][mqtt.text_sensor:027]: MQTT Text Sensor 'Uptime Human Readable':
+[16:40:38][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/uptime_human_readable/state'
+[16:40:38][C][mqtt.sensor:028]: MQTT Sensor 'Free Heap':
+[16:40:38][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/free_heap/state'
+[16:40:38][C][mqtt.sensor:028]: MQTT Sensor 'Max Alloc Block':
+[16:40:38][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/max_alloc_block/state'
+[16:40:38][C][mqtt.sensor:028]: MQTT Sensor 'Heap Fragmentation':
+[16:40:38][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/heap_fragmentation/state'
+[16:40:38][C][mqtt.sensor:028]: MQTT Sensor 'Loop Time':
+[16:40:38][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/loop_time/state'
+[16:40:38][C][debug:022]: Debug component:
+[16:40:38][C][debug:027]:   Free space on heap 'Free Heap'
+[16:40:38][C][debug:027]:     State Class: ''
+[16:40:38][C][debug:027]:     Unit of Measurement: 'B'
+[16:40:38][C][debug:027]:     Accuracy Decimals: 0
+[16:40:38][C][debug:027]:     Icon: 'mdi:counter'
+[16:40:38][C][debug:028]:   Largest free heap block 'Max Alloc Block'
+[16:40:38][C][debug:028]:     State Class: ''
+[16:40:38][C][debug:028]:     Unit of Measurement: 'B'
+[16:40:38][C][debug:028]:     Accuracy Decimals: 0
+[16:40:38][C][debug:028]:     Icon: 'mdi:counter'
+[16:40:38][C][debug:031]:   Heap fragmentation 'Heap Fragmentation'
+[16:40:38][C][debug:031]:     State Class: ''
+[16:40:38][C][debug:031]:     Unit of Measurement: '%'
+[16:40:38][C][debug:031]:     Accuracy Decimals: 1
+[16:40:38][C][debug:031]:     Icon: 'mdi:counter'
+[16:40:38][D][debug:037]: ESPHome version 2025.5.1
+[16:40:38][D][debug:041]: Free Heap Size: 18712 bytes
+[16:40:38][D][debug:041]: Flash Chip: Size=4096kB Speed=40MHz Mode=DOUT
+[16:40:38][D][debug:050]: Chip ID: 0x00072740
+[16:40:38][D][debug:051]: SDK Version: 2.2.2-dev(38a443e)
+[16:40:38][D][debug:052]: Core Version: 3.1.2
+[16:40:38][D][debug:053]: Boot Version=31 Mode=1
+[16:40:38][D][debug:054]: CPU Frequency: 80
+[16:40:38][D][debug:055]: Flash Chip ID=0x001640E0
+[16:40:38][D][debug:056]: Reset Reason: Software/System restart
+[16:40:38][D][debug:057]: Reset Info: Software/System restart
+[16:40:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:40:41][D][sensor:093]: 'Free Heap': Sending state 25528.00000 B with 0 decimals of accuracy
+[16:40:41][D][sensor:093]: 'Loop Time': Sending state 131.00000 ms with 0 decimals of accuracy
+[16:40:41][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:40:41][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:40:42][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 31s'
+[16:40:42][D][sensor:093]: 'Uptime Sensor': Sending state 390.91199 s with 0 decimals of accuracy
+[16:40:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:40:51][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:40:51][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:40:51][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:40:51][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:40:52][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 41s'
+[16:40:52][D][sensor:093]: 'Uptime Sensor': Sending state 400.91400 s with 0 decimals of accuracy
+[16:40:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:41:01][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:41:01][D][sensor:093]: 'Loop Time': Sending state 42.00000 ms with 0 decimals of accuracy
+[16:41:01][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:41:01][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:41:02][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 51s'
+[16:41:02][D][sensor:093]: 'Uptime Sensor': Sending state 410.91400 s with 0 decimals of accuracy
+[16:41:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:41:11][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:41:11][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:41:11][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:41:11][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:41:12][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 1s'
+[16:41:12][D][sensor:093]: 'Uptime Sensor': Sending state 420.91501 s with 0 decimals of accuracy
+[16:41:17][D][main:279]: Current value of daylight_enable: 0
+[16:41:17][D][main:115]: Daylight enable switch is OFF, not activating relay or red LED
+[16:41:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:41:21][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:41:21][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:41:21][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:41:21][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:41:22][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 11s'
+[16:41:22][D][sensor:093]: 'Uptime Sensor': Sending state 430.91599 s with 0 decimals of accuracy
+[16:41:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:41:31][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:41:31][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[16:41:31][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:41:31][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:41:32][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 21s'
+[16:41:32][D][sensor:093]: 'Uptime Sensor': Sending state 440.91599 s with 0 decimals of accuracy
+[16:41:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:41:41][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:41:41][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[16:41:41][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:41:41][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:41:42][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 31s'
+[16:41:42][D][sensor:093]: 'Uptime Sensor': Sending state 450.91599 s with 0 decimals of accuracy
+[16:41:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:41:51][D][sensor:093]: 'Free Heap': Sending state 25536.00000 B with 0 decimals of accuracy
+[16:41:51][D][sensor:093]: 'Loop Time': Sending state 44.00000 ms with 0 decimals of accuracy
+[16:41:51][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:41:51][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:41:52][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 41s'
+[16:41:52][D][sensor:093]: 'Uptime Sensor': Sending state 460.91699 s with 0 decimals of accuracy
+[16:41:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:42:01][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:42:01][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:42:01][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:42:01][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:42:02][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 51s'
+[16:42:02][D][sensor:093]: 'Uptime Sensor': Sending state 470.92200 s with 0 decimals of accuracy
+[16:42:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:42:11][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:42:11][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:42:11][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:42:11][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:42:12][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 1s'
+[16:42:12][D][sensor:093]: 'Uptime Sensor': Sending state 480.92200 s with 0 decimals of accuracy
+[16:42:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:42:21][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:42:21][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:42:21][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:42:21][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:42:22][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 11s'
+[16:42:22][D][sensor:093]: 'Uptime Sensor': Sending state 490.92300 s with 0 decimals of accuracy
+[16:42:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:42:31][D][sensor:093]: 'Free Heap': Sending state 25560.00000 B with 0 decimals of accuracy
+[16:42:31][D][sensor:093]: 'Loop Time': Sending state 39.00000 ms with 0 decimals of accuracy
+[16:42:31][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:42:31][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:42:32][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 21s'
+[16:42:32][D][sensor:093]: 'Uptime Sensor': Sending state 500.92401 s with 0 decimals of accuracy
+[16:42:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:42:41][D][sensor:093]: 'Free Heap': Sending state 25560.00000 B with 0 decimals of accuracy
+[16:42:41][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[16:42:41][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:42:41][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:42:42][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 31s'
+[16:42:42][D][sensor:093]: 'Uptime Sensor': Sending state 510.92499 s with 0 decimals of accuracy
+[16:42:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:42:51][D][sensor:093]: 'Free Heap': Sending state 25536.00000 B with 0 decimals of accuracy
+[16:42:51][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:42:51][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:42:51][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:42:52][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 41s'
+[16:42:52][D][sensor:093]: 'Uptime Sensor': Sending state 520.92798 s with 0 decimals of accuracy
+[16:42:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:43:01][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:43:01][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[16:43:01][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:43:01][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:43:02][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 51s'
+[16:43:02][D][sensor:093]: 'Uptime Sensor': Sending state 530.93298 s with 0 decimals of accuracy
+[16:43:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:43:11][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:43:11][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:43:11][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:43:11][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:43:12][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 1s'
+[16:43:12][D][sensor:093]: 'Uptime Sensor': Sending state 540.93903 s with 0 decimals of accuracy
+[16:43:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:43:21][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:43:21][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[16:43:21][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:43:21][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:43:22][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 11s'
+[16:43:22][D][sensor:093]: 'Uptime Sensor': Sending state 550.93903 s with 0 decimals of accuracy
+[16:43:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:43:31][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:43:31][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[16:43:31][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:43:31][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:43:32][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 21s'
+[16:43:32][D][sensor:093]: 'Uptime Sensor': Sending state 560.93903 s with 0 decimals of accuracy
+[16:43:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:43:41][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:43:41][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:43:41][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:43:41][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:43:42][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 31s'
+[16:43:42][D][sensor:093]: 'Uptime Sensor': Sending state 570.93903 s with 0 decimals of accuracy
+[16:43:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:43:51][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:43:51][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[16:43:51][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:43:51][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:43:52][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 41s'
+[16:43:52][D][sensor:093]: 'Uptime Sensor': Sending state 580.94202 s with 0 decimals of accuracy
+[16:43:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:44:01][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:44:01][D][sensor:093]: 'Loop Time': Sending state 30.00000 ms with 0 decimals of accuracy
+[16:44:01][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:44:01][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:44:02][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 51s'
+[16:44:02][D][sensor:093]: 'Uptime Sensor': Sending state 590.94501 s with 0 decimals of accuracy
+[16:44:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:44:11][D][sensor:093]: 'Free Heap': Sending state 25376.00000 B with 0 decimals of accuracy
+[16:44:11][D][sensor:093]: 'Loop Time': Sending state 44.00000 ms with 0 decimals of accuracy
+[16:44:11][D][sensor:093]: 'Max Alloc Block': Sending state 14808.00000 B with 0 decimals of accuracy
+[16:44:11][D][sensor:093]: 'Heap Fragmentation': Sending state 7.00000 % with 1 decimals of accuracy
+[16:44:12][D][text_sensor:064]: 'Uptime Human Readable': Sending state '10m 1s'
+[16:44:12][D][sensor:093]: 'Uptime Sensor': Sending state 600.94501 s with 0 decimals of accuracy
+[16:44:12][D][esphome.ota:117]: Starting update from 192.168.0.148...
+[16:44:12][W][component:167]: Component esphome.ota set Warning flag: unspecified
+[16:44:12][D][esphome.ota:293]: Progress: 0.3%
+[16:44:13][D][esphome.ota:293]: Progress: 18.4%
+[16:44:14][D][esphome.ota:293]: Progress: 33.9%
+[16:44:15][D][esphome.ota:293]: Progress: 48.1%
+[16:44:16][D][esphome.ota:293]: Progress: 62.3%
+[16:44:17][D][esphome.ota:293]: Progress: 76.5%
+[16:44:18][D][esphome.ota:293]: Progress: 90.7%
+[16:44:19][I][esphome.ota:326]: Update complete
+[16:44:19][W][component:182]: Component esphome.ota cleared Warning flag
+[16:44:19][I][app:149]: Rebooting safely...
+WARNING shaker1 @ 192.168.0.188: Connection error occurred: [Errno 104] Connection reset by peer
+INFO Processing unexpected disconnect from ESPHome API for shaker1 @ 192.168.0.188
+WARNING Disconnected from API
+INFO Successfully connected to shaker1 @ 192.168.0.188 in 0.279s
+INFO Successful handshake with shaker1 @ 192.168.0.188 in 0.410s
+[16:45:15][D][sensor:093]: 'Free Heap': Sending state 25392.00000 B with 0 decimals of accuracy
+WARNING shaker1 @ 192.168.0.188: Connection error occurred: [Errno 104] Connection reset by peer
+INFO Processing unexpected disconnect from ESPHome API for shaker1 @ 192.168.0.188
+WARNING Disconnected from API
+INFO Successfully connected to shaker1 @ 192.168.0.188 in 0.231s
+INFO Successful handshake with shaker1 @ 192.168.0.188 in 0.380s
+[16:46:00][D][main:283]: Current value of daylight_enable: 0
+[16:46:00][D][main:119]: Daylight enable switch is OFF, not activating relay or red LED
+[16:46:01][D][sensor:093]: 'Free Heap': Sending state 25056.00000 B with 0 decimals of accuracy
+[16:46:01][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:46:01][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:46:01][D][sensor:093]: 'Heap Fragmentation': Sending state 6.00000 % with 1 decimals of accuracy
+[16:46:02][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:46:03][D][text_sensor:064]: 'Uptime Human Readable': Sending state '1m 43s'
+[16:46:03][D][sensor:093]: 'Uptime Sensor': Sending state 102.90400 s with 0 decimals of accuracy
+[16:46:11][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:46:12][D][sensor:093]: 'Loop Time': Sending state 42.00000 ms with 0 decimals of accuracy
+[16:46:12][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:46:12][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:46:12][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:46:12][D][text_sensor:064]: 'Uptime Human Readable': Sending state '1m 53s'
+[16:46:12][D][sensor:093]: 'Uptime Sensor': Sending state 112.90600 s with 0 decimals of accuracy
+[16:46:21][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:46:23][D][sensor:093]: 'Loop Time': Sending state 42.00000 ms with 0 decimals of accuracy
+[16:46:23][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:46:23][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:46:23][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:46:23][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 3s'
+[16:46:23][D][sensor:093]: 'Uptime Sensor': Sending state 122.90700 s with 0 decimals of accuracy
+[16:46:31][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:46:31][D][sensor:093]: 'Loop Time': Sending state 31.00000 ms with 0 decimals of accuracy
+[16:46:31][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:46:31][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:46:31][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:46:32][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 13s'
+[16:46:32][D][sensor:093]: 'Uptime Sensor': Sending state 132.90700 s with 0 decimals of accuracy
+[16:46:41][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:46:42][D][sensor:093]: 'Loop Time': Sending state 40.00000 ms with 0 decimals of accuracy
+[16:46:42][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:46:42][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:46:42][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:46:42][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 23s'
+[16:46:43][D][sensor:093]: 'Uptime Sensor': Sending state 142.91299 s with 0 decimals of accuracy
+[16:46:51][D][sensor:093]: 'Free Heap': Sending state 25544.00000 B with 0 decimals of accuracy
+[16:46:51][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[16:46:51][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:46:51][D][sensor:093]: 'Heap Fragmentation': Sending state 9.00000 % with 1 decimals of accuracy
+[16:46:51][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:46:52][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 33s'
+[16:46:52][D][sensor:093]: 'Uptime Sensor': Sending state 152.91299 s with 0 decimals of accuracy
+[16:47:01][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:47:01][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[16:47:01][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:47:01][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:47:01][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:47:02][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 43s'
+[16:47:02][D][sensor:093]: 'Uptime Sensor': Sending state 162.91400 s with 0 decimals of accuracy
+[16:47:11][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:47:11][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:47:11][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:47:11][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:47:11][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:47:12][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 53s'
+[16:47:12][D][sensor:093]: 'Uptime Sensor': Sending state 172.91400 s with 0 decimals of accuracy
+[16:47:21][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:47:21][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:47:21][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:47:21][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:47:21][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:47:22][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 3s'
+[16:47:22][D][sensor:093]: 'Uptime Sensor': Sending state 182.91499 s with 0 decimals of accuracy
+[16:47:31][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:47:31][D][sensor:093]: 'Loop Time': Sending state 41.00000 ms with 0 decimals of accuracy
+[16:47:31][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:47:31][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:47:31][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:47:32][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 13s'
+[16:47:32][D][sensor:093]: 'Uptime Sensor': Sending state 192.91600 s with 0 decimals of accuracy
+[16:47:41][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:47:41][D][sensor:093]: 'Loop Time': Sending state 30.00000 ms with 0 decimals of accuracy
+[16:47:41][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:47:41][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:47:41][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:47:42][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 23s'
+[16:47:42][D][sensor:093]: 'Uptime Sensor': Sending state 202.91800 s with 0 decimals of accuracy
+[16:47:51][D][sensor:093]: 'Free Heap': Sending state 25544.00000 B with 0 decimals of accuracy
+[16:47:51][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:47:51][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:47:51][D][sensor:093]: 'Heap Fragmentation': Sending state 9.00000 % with 1 decimals of accuracy
+[16:47:51][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:47:52][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 33s'
+[16:47:52][D][sensor:093]: 'Uptime Sensor': Sending state 212.91800 s with 0 decimals of accuracy
+[16:48:01][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:48:01][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:48:01][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:48:01][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:48:01][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:48:02][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 43s'
+[16:48:02][D][sensor:093]: 'Uptime Sensor': Sending state 222.92000 s with 0 decimals of accuracy
+[16:48:11][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:48:11][D][sensor:093]: 'Loop Time': Sending state 31.00000 ms with 0 decimals of accuracy
+[16:48:11][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:48:11][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:48:11][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:48:12][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 53s'
+[16:48:12][D][sensor:093]: 'Uptime Sensor': Sending state 232.92200 s with 0 decimals of accuracy
+[16:48:21][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:48:21][D][sensor:093]: 'Loop Time': Sending state 43.00000 ms with 0 decimals of accuracy
+[16:48:21][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:48:21][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:48:21][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:48:22][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 3s'
+[16:48:22][D][sensor:093]: 'Uptime Sensor': Sending state 242.92200 s with 0 decimals of accuracy
+[16:48:31][D][sensor:093]: 'Free Heap': Sending state 25544.00000 B with 0 decimals of accuracy
+[16:48:31][D][sensor:093]: 'Loop Time': Sending state 40.00000 ms with 0 decimals of accuracy
+[16:48:31][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:48:31][D][sensor:093]: 'Heap Fragmentation': Sending state 9.00000 % with 1 decimals of accuracy
+[16:48:31][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:48:32][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 13s'
+[16:48:32][D][sensor:093]: 'Uptime Sensor': Sending state 252.92200 s with 0 decimals of accuracy
+[16:48:41][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:48:41][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:48:41][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:48:41][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:48:41][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:48:42][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 23s'
+[16:48:42][D][sensor:093]: 'Uptime Sensor': Sending state 262.92300 s with 0 decimals of accuracy
+[16:48:51][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:48:51][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[16:48:51][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:48:51][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:48:51][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:48:52][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 33s'
+[16:48:52][D][sensor:093]: 'Uptime Sensor': Sending state 272.92300 s with 0 decimals of accuracy
+[16:49:00][D][main:283]: Current value of daylight_enable: 0
+[16:49:00][D][main:119]: Daylight enable switch is OFF, not activating relay or red LED
+[16:49:01][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:49:01][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:49:01][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:49:01][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:49:01][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:49:02][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 43s'
+[16:49:02][D][sensor:093]: 'Uptime Sensor': Sending state 282.92401 s with 0 decimals of accuracy
+[16:49:11][D][sensor:093]: 'Free Heap': Sending state 25544.00000 B with 0 decimals of accuracy
+[16:49:11][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:49:11][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:49:11][D][sensor:093]: 'Heap Fragmentation': Sending state 9.00000 % with 1 decimals of accuracy
+[16:49:11][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:49:12][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 53s'
+[16:49:12][D][sensor:093]: 'Uptime Sensor': Sending state 292.92599 s with 0 decimals of accuracy
+[16:49:21][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:49:21][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[16:49:21][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:49:21][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:49:21][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:49:22][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 3s'
+[16:49:22][D][sensor:093]: 'Uptime Sensor': Sending state 302.92899 s with 0 decimals of accuracy
+[16:49:31][D][sensor:093]: 'Free Heap': Sending state 25544.00000 B with 0 decimals of accuracy
+[16:49:31][D][sensor:093]: 'Loop Time': Sending state 41.00000 ms with 0 decimals of accuracy
+[16:49:31][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:49:31][D][sensor:093]: 'Heap Fragmentation': Sending state 9.00000 % with 1 decimals of accuracy
+[16:49:31][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:49:32][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 13s'
+[16:49:32][D][sensor:093]: 'Uptime Sensor': Sending state 312.92899 s with 0 decimals of accuracy
+[16:49:41][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:49:41][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[16:49:41][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:49:41][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:49:41][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:49:42][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 23s'
+[16:49:42][D][sensor:093]: 'Uptime Sensor': Sending state 322.92899 s with 0 decimals of accuracy
+[16:49:51][D][sensor:093]: 'Free Heap': Sending state 25544.00000 B with 0 decimals of accuracy
+[16:49:51][D][sensor:093]: 'Loop Time': Sending state 30.00000 ms with 0 decimals of accuracy
+[16:49:51][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:49:51][D][sensor:093]: 'Heap Fragmentation': Sending state 9.00000 % with 1 decimals of accuracy
+[16:49:51][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:49:52][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 33s'
+[16:49:52][D][sensor:093]: 'Uptime Sensor': Sending state 332.92899 s with 0 decimals of accuracy
+[16:50:01][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:50:01][D][sensor:093]: 'Loop Time': Sending state 30.00000 ms with 0 decimals of accuracy
+[16:50:01][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:50:01][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:50:01][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:50:02][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 43s'
+[16:50:02][D][sensor:093]: 'Uptime Sensor': Sending state 342.93399 s with 0 decimals of accuracy
+[16:50:11][D][sensor:093]: 'Free Heap': Sending state 25544.00000 B with 0 decimals of accuracy
+[16:50:11][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[16:50:11][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:50:11][D][sensor:093]: 'Heap Fragmentation': Sending state 9.00000 % with 1 decimals of accuracy
+[16:50:11][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:50:12][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 53s'
+[16:50:12][D][sensor:093]: 'Uptime Sensor': Sending state 352.93600 s with 0 decimals of accuracy
+[16:50:21][D][sensor:093]: 'Free Heap': Sending state 25384.00000 B with 0 decimals of accuracy
+[16:50:21][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:50:21][D][sensor:093]: 'Max Alloc Block': Sending state 14536.00000 B with 0 decimals of accuracy
+[16:50:21][D][sensor:093]: 'Heap Fragmentation': Sending state 8.00000 % with 1 decimals of accuracy
+[16:50:21][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:50:22][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 3s'
+[16:50:22][D][sensor:093]: 'Uptime Sensor': Sending state 362.93600 s with 0 decimals of accuracy
+[16:50:27][D][esphome.ota:117]: Starting update from 192.168.0.148...
+[16:50:27][W][component:167]: Component esphome.ota set Warning flag: unspecified
+[16:50:28][D][esphome.ota:293]: Progress: 0.3%
+[16:50:29][D][esphome.ota:293]: Progress: 17.1%
+[16:50:30][D][esphome.ota:293]: Progress: 32.5%
+[16:50:31][D][esphome.ota:293]: Progress: 46.7%
+[16:50:32][D][esphome.ota:293]: Progress: 59.6%
+[16:50:33][D][esphome.ota:293]: Progress: 73.8%
+[16:50:34][D][esphome.ota:293]: Progress: 87.9%
+[16:50:35][I][esphome.ota:326]: Update complete
+[16:50:35][W][component:182]: Component esphome.ota cleared Warning flag
+[16:50:35][I][app:149]: Rebooting safely...
+INFO Processing expected disconnect from ESPHome API for shaker1 @ 192.168.0.188
+WARNING Disconnected from API
+INFO Successfully connected to shaker1 @ 192.168.0.188 in 15.682s
+INFO Successful handshake with shaker1 @ 192.168.0.188 in 0.105s
+[16:50:56][C][mqtt.switch:041]: MQTT Switch 'Use Safe Mode': 
+[16:50:56][C][mqtt.switch:042]:   State Topic: 'src/shaker1/switch/use_safe_mode/state'
+[16:50:56][C][mqtt.switch:042]:   Command Topic: 'src/shaker1/switch/use_safe_mode/command'
+[16:50:56][C][mqtt.switch:041]: MQTT Switch 'Switch Relay shaker1': 
+[16:50:56][C][mqtt.switch:042]:   State Topic: 'src/shaker1/switch/switch_relay_shaker1/state'
+[16:50:56][C][mqtt.switch:042]:   Command Topic: 'src/shaker1/switch/switch_relay_shaker1/command'
+[16:50:56][C][mqtt.switch:041]: MQTT Switch 'Daylight Shaker1': 
+[16:50:56][C][mqtt.switch:042]:   State Topic: 'src/shaker1/switch/daylight_shaker1/state'
+[16:50:56][C][mqtt.switch:042]:   Command Topic: 'src/shaker1/switch/daylight_shaker1/command'
+[16:50:56][C][mqtt.sensor:028]: MQTT Sensor 'WiFi Signal Sensor':
+[16:50:56][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/wifi_signal_sensor/state'
+[16:50:56][C][mqtt.binary_sensor:022]: MQTT Binary Sensor 'Status':
+[16:50:56][C][mqtt.binary_sensor:023]:   State Topic: 'src/shaker1/sys/online'
+[16:50:56][C][mqtt.text_sensor:027]: MQTT Text Sensor 'Connected SSID':
+[16:50:56][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/connected_ssid/state'
+[16:50:56][C][mqtt.text_sensor:027]: MQTT Text Sensor 'Mac Wifi Address':
+[16:50:56][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/mac_wifi_address/state'
+[16:50:56][C][mqtt.text_sensor:027]: MQTT Text Sensor 'IP Address':
+[16:50:56][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/ip_address/state'
+[16:50:56][C][mqtt.text_sensor:027]: MQTT Text Sensor 'ESPHome Version':
+[16:50:56][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/esphome_version/state'
+[16:50:56][C][mqtt.text_sensor:027]: MQTT Text Sensor 'Uptime Human Readable':
+[16:50:56][C][mqtt.text_sensor:028]:   State Topic: 'src/shaker1/sensor/uptime_human_readable/state'
+[16:50:56][C][mqtt.sensor:028]: MQTT Sensor 'Free Heap':
+[16:50:56][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/free_heap/state'
+[16:50:56][C][mqtt.sensor:028]: MQTT Sensor 'Max Alloc Block':
+[16:50:56][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/max_alloc_block/state'
+[16:50:56][C][mqtt.sensor:028]: MQTT Sensor 'Heap Fragmentation':
+[16:50:56][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/heap_fragmentation/state'
+[16:50:56][C][mqtt.sensor:028]: MQTT Sensor 'Loop Time':
+[16:50:56][C][mqtt.sensor:032]:   State Topic: 'src/shaker1/sensor/loop_time/state'
+[16:50:56][C][debug:022]: Debug component:
+[16:50:56][C][debug:027]:   Free space on heap 'Free Heap'
+[16:50:56][C][debug:027]:     State Class: ''
+[16:50:56][C][debug:027]:     Unit of Measurement: 'B'
+[16:50:56][C][debug:027]:     Accuracy Decimals: 0
+[16:50:56][C][debug:027]:     Icon: 'mdi:counter'
+[16:50:56][C][debug:028]:   Largest free heap block 'Max Alloc Block'
+[16:50:56][C][debug:028]:     State Class: ''
+[16:50:56][C][debug:028]:     Unit of Measurement: 'B'
+[16:50:56][C][debug:028]:     Accuracy Decimals: 0
+[16:50:56][C][debug:028]:     Icon: 'mdi:counter'
+[16:50:56][C][debug:031]:   Heap fragmentation 'Heap Fragmentation'
+[16:50:56][C][debug:031]:     State Class: ''
+[16:50:56][C][debug:031]:     Unit of Measurement: '%'
+[16:50:56][C][debug:031]:     Accuracy Decimals: 1
+[16:50:56][C][debug:031]:     Icon: 'mdi:counter'
+[16:50:56][D][debug:037]: ESPHome version 2025.5.1
+[16:50:56][D][debug:041]: Free Heap Size: 14504 bytes
+[16:50:56][D][debug:041]: Flash Chip: Size=4096kB Speed=40MHz Mode=DOUT
+[16:50:56][D][debug:050]: Chip ID: 0x00072740
+[16:50:56][D][debug:051]: SDK Version: 2.2.2-dev(38a443e)
+[16:50:56][D][debug:052]: Core Version: 3.1.2
+[16:50:56][D][debug:053]: Boot Version=31 Mode=1
+[16:50:56][D][debug:054]: CPU Frequency: 80
+[16:50:56][D][debug:055]: Flash Chip ID=0x001640E0
+[16:50:56][D][debug:056]: Reset Reason: Software/System restart
+[16:50:56][D][debug:057]: Reset Info: Software/System restart
+[16:50:56][W][component:182]: Component mqtt cleared Warning flag
+[16:50:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:51:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '25s'
+[16:51:00][D][sensor:093]: 'Uptime Sensor': Sending state 24.78600 s with 0 decimals of accuracy
+[16:51:00][D][sensor:093]: 'Free Heap': Sending state 25008.00000 B with 0 decimals of accuracy
+[16:51:00][D][sensor:093]: 'Loop Time': Sending state 20058.00000 ms with 0 decimals of accuracy
+[16:51:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:51:00][D][sensor:093]: 'Heap Fragmentation': Sending state 17.00000 % with 1 decimals of accuracy
+[16:51:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:51:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '35s'
+[16:51:10][D][sensor:093]: 'Uptime Sensor': Sending state 34.78700 s with 0 decimals of accuracy
+[16:51:10][D][sensor:093]: 'Free Heap': Sending state 25424.00000 B with 0 decimals of accuracy
+[16:51:10][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:51:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:51:10][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[16:51:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:51:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '45s'
+[16:51:20][D][sensor:093]: 'Uptime Sensor': Sending state 44.78600 s with 0 decimals of accuracy
+[16:51:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:51:20][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[16:51:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:51:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:51:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:51:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '55s'
+[16:51:30][D][sensor:093]: 'Uptime Sensor': Sending state 54.78600 s with 0 decimals of accuracy
+[16:51:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:51:30][D][sensor:093]: 'Loop Time': Sending state 30.00000 ms with 0 decimals of accuracy
+[16:51:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:51:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:51:32][D][main:288]: Current value of daylight_enable: 1
+[16:51:32][D][main:129]: Relay and red LED turned ON due to daylight enable switch
+[16:51:34][D][main:136]: Relay and red LED turned OFF after 3 seconds
+[16:51:34][D][switch:016]: 'Switch Relay shaker1' Turning OFF.
+[16:51:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:51:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '1m 5s'
+[16:51:40][D][sensor:093]: 'Uptime Sensor': Sending state 64.78800 s with 0 decimals of accuracy
+[16:51:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:51:40][D][sensor:093]: 'Loop Time': Sending state 30.00000 ms with 0 decimals of accuracy
+[16:51:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:51:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:51:46][I][safe_mode:041]: Boot seems successful; resetting boot loop counter
+[16:51:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:51:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '1m 15s'
+[16:51:50][D][sensor:093]: 'Uptime Sensor': Sending state 74.78800 s with 0 decimals of accuracy
+[16:51:50][D][sensor:093]: 'Free Heap': Sending state 25424.00000 B with 0 decimals of accuracy
+[16:51:50][D][sensor:093]: 'Loop Time': Sending state 31.00000 ms with 0 decimals of accuracy
+[16:51:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:51:50][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[16:51:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:52:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '1m 25s'
+[16:52:00][D][sensor:093]: 'Uptime Sensor': Sending state 84.78800 s with 0 decimals of accuracy
+[16:52:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:52:00][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[16:52:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:52:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:52:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:52:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '1m 35s'
+[16:52:10][D][sensor:093]: 'Uptime Sensor': Sending state 94.79000 s with 0 decimals of accuracy
+[16:52:10][D][sensor:093]: 'Free Heap': Sending state 25424.00000 B with 0 decimals of accuracy
+[16:52:10][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:52:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:52:10][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[16:52:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:52:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '1m 45s'
+[16:52:20][D][sensor:093]: 'Uptime Sensor': Sending state 104.79000 s with 0 decimals of accuracy
+[16:52:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:52:20][D][sensor:093]: 'Loop Time': Sending state 30.00000 ms with 0 decimals of accuracy
+[16:52:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:52:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:52:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:52:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '1m 55s'
+[16:52:30][D][sensor:093]: 'Uptime Sensor': Sending state 114.79100 s with 0 decimals of accuracy
+[16:52:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:52:30][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:52:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:52:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:52:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:52:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 5s'
+[16:52:40][D][sensor:093]: 'Uptime Sensor': Sending state 124.79200 s with 0 decimals of accuracy
+[16:52:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:52:40][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:52:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:52:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:52:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:52:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 15s'
+[16:52:50][D][sensor:093]: 'Uptime Sensor': Sending state 134.79201 s with 0 decimals of accuracy
+[16:52:50][D][sensor:093]: 'Free Heap': Sending state 25424.00000 B with 0 decimals of accuracy
+[16:52:50][D][sensor:093]: 'Loop Time': Sending state 31.00000 ms with 0 decimals of accuracy
+[16:52:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:52:50][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[16:52:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:53:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 25s'
+[16:53:00][D][sensor:093]: 'Uptime Sensor': Sending state 144.79601 s with 0 decimals of accuracy
+[16:53:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:53:00][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[16:53:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:53:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:53:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:53:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 35s'
+[16:53:10][D][sensor:093]: 'Uptime Sensor': Sending state 154.79800 s with 0 decimals of accuracy
+[16:53:10][D][sensor:093]: 'Free Heap': Sending state 25424.00000 B with 0 decimals of accuracy
+[16:53:10][D][sensor:093]: 'Loop Time': Sending state 42.00000 ms with 0 decimals of accuracy
+[16:53:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:53:10][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[16:53:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:53:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 45s'
+[16:53:20][D][sensor:093]: 'Uptime Sensor': Sending state 164.79800 s with 0 decimals of accuracy
+[16:53:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:53:20][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[16:53:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:53:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:53:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:53:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '2m 55s'
+[16:53:30][D][sensor:093]: 'Uptime Sensor': Sending state 174.79800 s with 0 decimals of accuracy
+[16:53:30][D][sensor:093]: 'Free Heap': Sending state 25424.00000 B with 0 decimals of accuracy
+[16:53:30][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[16:53:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:53:30][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[16:53:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:53:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 5s'
+[16:53:40][D][sensor:093]: 'Uptime Sensor': Sending state 184.79800 s with 0 decimals of accuracy
+[16:53:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:53:40][D][sensor:093]: 'Loop Time': Sending state 39.00000 ms with 0 decimals of accuracy
+[16:53:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:53:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:53:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:53:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 15s'
+[16:53:50][D][sensor:093]: 'Uptime Sensor': Sending state 194.79800 s with 0 decimals of accuracy
+[16:53:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:53:50][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[16:53:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:53:50][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[16:53:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:54:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 25s'
+[16:54:00][D][sensor:093]: 'Uptime Sensor': Sending state 204.79900 s with 0 decimals of accuracy
+[16:54:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:54:00][D][sensor:093]: 'Loop Time': Sending state 41.00000 ms with 0 decimals of accuracy
+[16:54:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:54:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:54:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:54:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 35s'
+[16:54:10][D][sensor:093]: 'Uptime Sensor': Sending state 214.80299 s with 0 decimals of accuracy
+[16:54:10][D][sensor:093]: 'Free Heap': Sending state 25424.00000 B with 0 decimals of accuracy
+[16:54:10][D][sensor:093]: 'Loop Time': Sending state 39.00000 ms with 0 decimals of accuracy
+[16:54:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:54:10][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[16:54:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:54:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 45s'
+[16:54:20][D][sensor:093]: 'Uptime Sensor': Sending state 224.80299 s with 0 decimals of accuracy
+[16:54:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:54:20][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[16:54:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:54:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:54:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:54:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '3m 55s'
+[16:54:30][D][sensor:093]: 'Uptime Sensor': Sending state 234.80400 s with 0 decimals of accuracy
+[16:54:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:54:30][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:54:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:54:30][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[16:54:32][D][main:288]: Current value of daylight_enable: 1
+[16:54:32][D][main:129]: Relay and red LED turned ON due to daylight enable switch
+[16:54:34][D][main:136]: Relay and red LED turned OFF after 3 seconds
+[16:54:34][D][switch:016]: 'Switch Relay shaker1' Turning OFF.
+[16:54:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:54:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 5s'
+[16:54:40][D][sensor:093]: 'Uptime Sensor': Sending state 244.80400 s with 0 decimals of accuracy
+[16:54:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:54:40][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:54:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:54:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:54:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:54:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 15s'
+[16:54:50][D][sensor:093]: 'Uptime Sensor': Sending state 254.81000 s with 0 decimals of accuracy
+[16:54:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:54:50][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[16:54:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:54:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:54:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:55:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 25s'
+[16:55:00][D][sensor:093]: 'Uptime Sensor': Sending state 264.81299 s with 0 decimals of accuracy
+[16:55:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:55:00][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[16:55:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:55:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:55:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:55:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 35s'
+[16:55:10][D][sensor:093]: 'Uptime Sensor': Sending state 274.81299 s with 0 decimals of accuracy
+[16:55:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:55:10][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[16:55:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:55:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:55:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:55:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 45s'
+[16:55:20][D][sensor:093]: 'Uptime Sensor': Sending state 284.81299 s with 0 decimals of accuracy
+[16:55:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:55:20][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:55:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:55:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:55:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:55:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '4m 55s'
+[16:55:30][D][sensor:093]: 'Uptime Sensor': Sending state 294.81299 s with 0 decimals of accuracy
+[16:55:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:55:30][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:55:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:55:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:55:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:55:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 5s'
+[16:55:40][D][sensor:093]: 'Uptime Sensor': Sending state 304.81299 s with 0 decimals of accuracy
+[16:55:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:55:40][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:55:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:55:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:55:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:55:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 15s'
+[16:55:50][D][sensor:093]: 'Uptime Sensor': Sending state 314.81900 s with 0 decimals of accuracy
+[16:55:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:55:50][D][sensor:093]: 'Loop Time': Sending state 39.00000 ms with 0 decimals of accuracy
+[16:55:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:55:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:55:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:56:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 25s'
+[16:56:00][D][sensor:093]: 'Uptime Sensor': Sending state 324.82101 s with 0 decimals of accuracy
+[16:56:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:56:00][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[16:56:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:56:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:56:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:56:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 35s'
+[16:56:10][D][sensor:093]: 'Uptime Sensor': Sending state 334.82101 s with 0 decimals of accuracy
+[16:56:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:56:10][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:56:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:56:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:56:11][D][sntp:066]: Synchronized time: 2026-05-29 16:56:11
+[16:56:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:56:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 45s'
+[16:56:20][D][sensor:093]: 'Uptime Sensor': Sending state 344.82101 s with 0 decimals of accuracy
+[16:56:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:56:20][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:56:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:56:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:56:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:56:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '5m 55s'
+[16:56:30][D][sensor:093]: 'Uptime Sensor': Sending state 354.82199 s with 0 decimals of accuracy
+[16:56:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:56:30][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:56:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:56:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:56:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:56:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 5s'
+[16:56:40][D][sensor:093]: 'Uptime Sensor': Sending state 364.82300 s with 0 decimals of accuracy
+[16:56:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:56:40][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[16:56:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:56:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:56:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:56:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 15s'
+[16:56:50][D][sensor:093]: 'Uptime Sensor': Sending state 374.82300 s with 0 decimals of accuracy
+[16:56:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:56:50][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[16:56:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:56:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:56:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:57:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 25s'
+[16:57:00][D][sensor:093]: 'Uptime Sensor': Sending state 384.82401 s with 0 decimals of accuracy
+[16:57:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:57:00][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[16:57:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:57:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:57:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:57:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 35s'
+[16:57:10][D][sensor:093]: 'Uptime Sensor': Sending state 394.82501 s with 0 decimals of accuracy
+[16:57:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:57:10][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:57:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:57:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:57:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:57:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 45s'
+[16:57:20][D][sensor:093]: 'Uptime Sensor': Sending state 404.82901 s with 0 decimals of accuracy
+[16:57:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:57:20][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:57:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:57:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:57:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:57:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '6m 55s'
+[16:57:30][D][sensor:093]: 'Uptime Sensor': Sending state 414.83301 s with 0 decimals of accuracy
+[16:57:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:57:30][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[16:57:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:57:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:57:32][D][main:288]: Current value of daylight_enable: 1
+[16:57:32][D][main:129]: Relay and red LED turned ON due to daylight enable switch
+[16:57:34][D][main:136]: Relay and red LED turned OFF after 3 seconds
+[16:57:34][D][switch:016]: 'Switch Relay shaker1' Turning OFF.
+[16:57:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:57:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 5s'
+[16:57:40][D][sensor:093]: 'Uptime Sensor': Sending state 424.83301 s with 0 decimals of accuracy
+[16:57:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:57:40][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[16:57:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:57:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:57:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:57:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 15s'
+[16:57:50][D][sensor:093]: 'Uptime Sensor': Sending state 434.83401 s with 0 decimals of accuracy
+[16:57:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:57:50][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[16:57:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:57:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:57:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:58:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 25s'
+[16:58:00][D][sensor:093]: 'Uptime Sensor': Sending state 444.83600 s with 0 decimals of accuracy
+[16:58:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:58:00][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:58:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:58:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:58:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:58:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 35s'
+[16:58:10][D][sensor:093]: 'Uptime Sensor': Sending state 454.83701 s with 0 decimals of accuracy
+[16:58:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:58:10][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:58:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:58:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:58:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:58:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 45s'
+[16:58:20][D][sensor:093]: 'Uptime Sensor': Sending state 464.84201 s with 0 decimals of accuracy
+[16:58:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:58:20][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[16:58:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:58:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:58:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:58:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '7m 55s'
+[16:58:30][D][sensor:093]: 'Uptime Sensor': Sending state 474.84399 s with 0 decimals of accuracy
+[16:58:30][D][sensor:093]: 'Free Heap': Sending state 24920.00000 B with 0 decimals of accuracy
+[16:58:30][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[16:58:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:58:30][D][sensor:093]: 'Heap Fragmentation': Sending state 16.00000 % with 1 decimals of accuracy
+[16:58:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:58:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 5s'
+[16:58:40][D][sensor:093]: 'Uptime Sensor': Sending state 484.84399 s with 0 decimals of accuracy
+[16:58:40][D][sensor:093]: 'Free Heap': Sending state 22064.00000 B with 0 decimals of accuracy
+[16:58:40][D][sensor:093]: 'Loop Time': Sending state 39.00000 ms with 0 decimals of accuracy
+[16:58:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:58:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:58:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[16:58:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 15s'
+[16:58:50][D][sensor:093]: 'Uptime Sensor': Sending state 494.84900 s with 0 decimals of accuracy
+[16:58:50][D][sensor:093]: 'Free Heap': Sending state 24920.00000 B with 0 decimals of accuracy
+[16:58:50][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:58:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:58:50][D][sensor:093]: 'Heap Fragmentation': Sending state 16.00000 % with 1 decimals of accuracy
+[16:58:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:59:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 25s'
+[16:59:00][D][sensor:093]: 'Uptime Sensor': Sending state 504.84799 s with 0 decimals of accuracy
+[16:59:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:59:00][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[16:59:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:59:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:59:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:59:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 35s'
+[16:59:10][D][sensor:093]: 'Uptime Sensor': Sending state 514.84998 s with 0 decimals of accuracy
+[16:59:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:59:10][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[16:59:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:59:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:59:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -80.00000 dBm with 0 decimals of accuracy
+[16:59:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 45s'
+[16:59:20][D][sensor:093]: 'Uptime Sensor': Sending state 524.85199 s with 0 decimals of accuracy
+[16:59:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:59:20][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[16:59:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:59:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:59:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:59:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '8m 55s'
+[16:59:30][D][sensor:093]: 'Uptime Sensor': Sending state 534.85303 s with 0 decimals of accuracy
+[16:59:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:59:30][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[16:59:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:59:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:59:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:59:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 5s'
+[16:59:40][D][sensor:093]: 'Uptime Sensor': Sending state 544.85303 s with 0 decimals of accuracy
+[16:59:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:59:40][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[16:59:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:59:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:59:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[16:59:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 15s'
+[16:59:50][D][sensor:093]: 'Uptime Sensor': Sending state 554.85498 s with 0 decimals of accuracy
+[16:59:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[16:59:50][D][sensor:093]: 'Loop Time': Sending state 31.00000 ms with 0 decimals of accuracy
+[16:59:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[16:59:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[16:59:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:00:03][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 25s'
+[17:00:03][D][sensor:093]: 'Uptime Sensor': Sending state 564.85498 s with 0 decimals of accuracy
+[17:00:03][D][sensor:093]: 'Free Heap': Sending state 22064.00000 B with 0 decimals of accuracy
+[17:00:03][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[17:00:03][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:00:03][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:00:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:00:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 35s'
+[17:00:10][D][sensor:093]: 'Uptime Sensor': Sending state 574.85699 s with 0 decimals of accuracy
+[17:00:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:00:10][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:00:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:00:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:00:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:00:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 45s'
+[17:00:20][D][sensor:093]: 'Uptime Sensor': Sending state 584.85699 s with 0 decimals of accuracy
+[17:00:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:00:20][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[17:00:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:00:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:00:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:00:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '9m 55s'
+[17:00:30][D][sensor:093]: 'Uptime Sensor': Sending state 594.85699 s with 0 decimals of accuracy
+[17:00:30][D][sensor:093]: 'Free Heap': Sending state 25448.00000 B with 0 decimals of accuracy
+[17:00:30][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:00:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:00:30][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[17:00:32][D][main:288]: Current value of daylight_enable: 1
+[17:00:32][D][main:129]: Relay and red LED turned ON due to daylight enable switch
+[17:00:34][D][main:136]: Relay and red LED turned OFF after 3 seconds
+[17:00:34][D][switch:016]: 'Switch Relay shaker1' Turning OFF.
+[17:00:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:00:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '10m 5s'
+[17:00:40][D][sensor:093]: 'Uptime Sensor': Sending state 604.85699 s with 0 decimals of accuracy
+[17:00:40][D][sensor:093]: 'Free Heap': Sending state 25320.00000 B with 0 decimals of accuracy
+[17:00:40][D][sensor:093]: 'Loop Time': Sending state 30.00000 ms with 0 decimals of accuracy
+[17:00:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:00:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:00:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:00:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '10m 15s'
+[17:00:50][D][sensor:093]: 'Uptime Sensor': Sending state 614.85999 s with 0 decimals of accuracy
+[17:00:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:00:50][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:00:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:00:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:00:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:01:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '10m 25s'
+[17:01:00][D][sensor:093]: 'Uptime Sensor': Sending state 624.85999 s with 0 decimals of accuracy
+[17:01:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:01:00][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:01:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:01:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:01:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:01:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '10m 35s'
+[17:01:10][D][sensor:093]: 'Uptime Sensor': Sending state 634.85999 s with 0 decimals of accuracy
+[17:01:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:01:10][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:01:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:01:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:01:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:01:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '10m 45s'
+[17:01:20][D][sensor:093]: 'Uptime Sensor': Sending state 644.85999 s with 0 decimals of accuracy
+[17:01:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:01:20][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:01:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:01:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:01:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:01:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '10m 55s'
+[17:01:30][D][sensor:093]: 'Uptime Sensor': Sending state 654.86200 s with 0 decimals of accuracy
+[17:01:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:01:30][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:01:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:01:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:01:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:01:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '11m 5s'
+[17:01:40][D][sensor:093]: 'Uptime Sensor': Sending state 664.86603 s with 0 decimals of accuracy
+[17:01:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:01:40][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:01:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:01:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:01:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:01:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '11m 15s'
+[17:01:50][D][sensor:093]: 'Uptime Sensor': Sending state 674.87000 s with 0 decimals of accuracy
+[17:01:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:01:50][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:01:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:01:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:01:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:02:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '11m 25s'
+[17:02:00][D][sensor:093]: 'Uptime Sensor': Sending state 684.87000 s with 0 decimals of accuracy
+[17:02:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:02:00][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:02:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:02:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:02:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:02:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '11m 35s'
+[17:02:10][D][sensor:093]: 'Uptime Sensor': Sending state 694.87000 s with 0 decimals of accuracy
+[17:02:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:02:10][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[17:02:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:02:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:02:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -82.00000 dBm with 0 decimals of accuracy
+[17:02:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '11m 45s'
+[17:02:20][D][sensor:093]: 'Uptime Sensor': Sending state 704.87500 s with 0 decimals of accuracy
+[17:02:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:02:20][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:02:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:02:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:02:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:02:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '11m 55s'
+[17:02:30][D][sensor:093]: 'Uptime Sensor': Sending state 714.87903 s with 0 decimals of accuracy
+[17:02:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:02:30][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:02:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:02:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:02:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:02:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '12m 5s'
+[17:02:40][D][sensor:093]: 'Uptime Sensor': Sending state 724.88501 s with 0 decimals of accuracy
+[17:02:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:02:40][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:02:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:02:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:02:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:02:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '12m 15s'
+[17:02:50][D][sensor:093]: 'Uptime Sensor': Sending state 734.88702 s with 0 decimals of accuracy
+[17:02:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:02:50][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[17:02:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:02:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:02:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:03:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '12m 25s'
+[17:03:00][D][sensor:093]: 'Uptime Sensor': Sending state 744.88702 s with 0 decimals of accuracy
+[17:03:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:03:00][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:03:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:03:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:03:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:03:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '12m 35s'
+[17:03:10][D][sensor:093]: 'Uptime Sensor': Sending state 754.88702 s with 0 decimals of accuracy
+[17:03:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:03:10][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:03:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:03:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:03:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:03:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '12m 45s'
+[17:03:20][D][sensor:093]: 'Uptime Sensor': Sending state 764.88898 s with 0 decimals of accuracy
+[17:03:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:03:20][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[17:03:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:03:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:03:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:03:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '12m 55s'
+[17:03:30][D][sensor:093]: 'Uptime Sensor': Sending state 774.89001 s with 0 decimals of accuracy
+[17:03:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:03:30][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[17:03:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:03:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:03:32][D][main:288]: Current value of daylight_enable: 1
+[17:03:32][D][main:129]: Relay and red LED turned ON due to daylight enable switch
+[17:03:34][D][main:136]: Relay and red LED turned OFF after 3 seconds
+[17:03:34][D][switch:016]: 'Switch Relay shaker1' Turning OFF.
+[17:03:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:03:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '13m 5s'
+[17:03:40][D][sensor:093]: 'Uptime Sensor': Sending state 784.89001 s with 0 decimals of accuracy
+[17:03:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:03:40][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:03:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:03:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:03:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:03:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '13m 15s'
+[17:03:50][D][sensor:093]: 'Uptime Sensor': Sending state 794.89398 s with 0 decimals of accuracy
+[17:03:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:03:50][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:03:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:03:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:03:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:04:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '13m 25s'
+[17:04:00][D][sensor:093]: 'Uptime Sensor': Sending state 804.89600 s with 0 decimals of accuracy
+[17:04:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:04:00][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:04:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:04:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:04:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:04:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '13m 35s'
+[17:04:10][D][sensor:093]: 'Uptime Sensor': Sending state 814.89600 s with 0 decimals of accuracy
+[17:04:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:04:10][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:04:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:04:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:04:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:04:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '13m 45s'
+[17:04:20][D][sensor:093]: 'Uptime Sensor': Sending state 824.89600 s with 0 decimals of accuracy
+[17:04:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:04:20][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:04:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:04:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:04:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:04:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '13m 55s'
+[17:04:30][D][sensor:093]: 'Uptime Sensor': Sending state 834.89899 s with 0 decimals of accuracy
+[17:04:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:04:30][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[17:04:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:04:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:04:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:04:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '14m 5s'
+[17:04:40][D][sensor:093]: 'Uptime Sensor': Sending state 844.90601 s with 0 decimals of accuracy
+[17:04:40][D][sensor:093]: 'Free Heap': Sending state 25320.00000 B with 0 decimals of accuracy
+[17:04:40][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[17:04:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:04:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:04:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:04:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '14m 15s'
+[17:04:50][D][sensor:093]: 'Uptime Sensor': Sending state 854.90601 s with 0 decimals of accuracy
+[17:04:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:04:50][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:04:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:04:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:04:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:05:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '14m 25s'
+[17:05:00][D][sensor:093]: 'Uptime Sensor': Sending state 864.90601 s with 0 decimals of accuracy
+[17:05:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:05:00][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:05:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:05:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:05:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:05:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '14m 35s'
+[17:05:10][D][sensor:093]: 'Uptime Sensor': Sending state 874.91199 s with 0 decimals of accuracy
+[17:05:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:05:10][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[17:05:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:05:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:05:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:05:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '14m 45s'
+[17:05:20][D][sensor:093]: 'Uptime Sensor': Sending state 884.91199 s with 0 decimals of accuracy
+[17:05:20][D][sensor:093]: 'Free Heap': Sending state 25448.00000 B with 0 decimals of accuracy
+[17:05:20][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[17:05:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:05:20][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy
+[17:05:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:05:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '14m 55s'
+[17:05:30][D][sensor:093]: 'Uptime Sensor': Sending state 894.91302 s with 0 decimals of accuracy
+[17:05:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:05:30][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[17:05:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:05:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:05:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:05:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '15m 5s'
+[17:05:40][D][sensor:093]: 'Uptime Sensor': Sending state 904.91803 s with 0 decimals of accuracy
+[17:05:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:05:40][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:05:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:05:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:05:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:05:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '15m 15s'
+[17:05:50][D][sensor:093]: 'Uptime Sensor': Sending state 914.91803 s with 0 decimals of accuracy
+[17:05:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:05:50][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:05:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:05:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:05:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:06:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '15m 25s'
+[17:06:00][D][sensor:093]: 'Uptime Sensor': Sending state 924.92102 s with 0 decimals of accuracy
+[17:06:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:06:00][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:06:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:06:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:06:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:06:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '15m 35s'
+[17:06:10][D][sensor:093]: 'Uptime Sensor': Sending state 934.92102 s with 0 decimals of accuracy
+[17:06:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:06:10][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:06:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:06:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:06:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:06:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '15m 45s'
+[17:06:20][D][sensor:093]: 'Uptime Sensor': Sending state 944.92798 s with 0 decimals of accuracy
+[17:06:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:06:20][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[17:06:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:06:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:06:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:06:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '15m 55s'
+[17:06:30][D][sensor:093]: 'Uptime Sensor': Sending state 954.93201 s with 0 decimals of accuracy
+[17:06:30][D][sensor:093]: 'Free Heap': Sending state 25064.00000 B with 0 decimals of accuracy
+[17:06:30][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[17:06:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:06:30][D][sensor:093]: 'Heap Fragmentation': Sending state 17.00000 % with 1 decimals of accuracy
+[17:06:32][D][main:288]: Current value of daylight_enable: 1
+[17:06:32][D][main:129]: Relay and red LED turned ON due to daylight enable switch
+[17:06:34][D][main:136]: Relay and red LED turned OFF after 3 seconds
+[17:06:34][D][switch:016]: 'Switch Relay shaker1' Turning OFF.
+[17:06:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:06:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '16m 5s'
+[17:06:40][D][sensor:093]: 'Uptime Sensor': Sending state 964.93201 s with 0 decimals of accuracy
+[17:06:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:06:40][D][sensor:093]: 'Loop Time': Sending state 43.00000 ms with 0 decimals of accuracy
+[17:06:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:06:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:06:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:06:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '16m 15s'
+[17:06:50][D][sensor:093]: 'Uptime Sensor': Sending state 974.93402 s with 0 decimals of accuracy
+[17:06:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:06:50][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[17:06:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:06:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:06:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:07:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '16m 25s'
+[17:07:00][D][sensor:093]: 'Uptime Sensor': Sending state 984.93402 s with 0 decimals of accuracy
+[17:07:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:07:00][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[17:07:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:07:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:07:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:07:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '16m 35s'
+[17:07:10][D][sensor:093]: 'Uptime Sensor': Sending state 994.93402 s with 0 decimals of accuracy
+[17:07:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:07:10][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:07:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:07:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:07:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:07:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '16m 45s'
+[17:07:20][D][sensor:093]: 'Uptime Sensor': Sending state 1004.93799 s with 0 decimals of accuracy
+[17:07:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:07:20][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:07:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:07:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:07:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:07:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '16m 55s'
+[17:07:30][D][sensor:093]: 'Uptime Sensor': Sending state 1014.93799 s with 0 decimals of accuracy
+[17:07:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:07:30][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:07:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:07:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:07:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:07:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '17m 5s'
+[17:07:40][D][sensor:093]: 'Uptime Sensor': Sending state 1024.93799 s with 0 decimals of accuracy
+[17:07:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:07:40][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:07:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:07:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:07:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:07:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '17m 15s'
+[17:07:50][D][sensor:093]: 'Uptime Sensor': Sending state 1034.93799 s with 0 decimals of accuracy
+[17:07:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:07:50][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:07:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:07:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:07:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:08:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '17m 25s'
+[17:08:00][D][sensor:093]: 'Uptime Sensor': Sending state 1044.93799 s with 0 decimals of accuracy
+[17:08:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:08:00][D][sensor:093]: 'Loop Time': Sending state 38.00000 ms with 0 decimals of accuracy
+[17:08:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:08:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:08:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:08:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '17m 35s'
+[17:08:10][D][sensor:093]: 'Uptime Sensor': Sending state 1054.94104 s with 0 decimals of accuracy
+[17:08:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:08:10][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:08:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:08:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:08:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:08:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '17m 45s'
+[17:08:20][D][sensor:093]: 'Uptime Sensor': Sending state 1064.94897 s with 0 decimals of accuracy
+[17:08:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:08:20][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[17:08:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:08:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:08:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:08:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '17m 55s'
+[17:08:30][D][sensor:093]: 'Uptime Sensor': Sending state 1074.95300 s with 0 decimals of accuracy
+[17:08:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:08:30][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:08:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:08:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:08:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:08:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '18m 5s'
+[17:08:40][D][sensor:093]: 'Uptime Sensor': Sending state 1084.95398 s with 0 decimals of accuracy
+[17:08:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:08:40][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:08:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:08:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:08:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:08:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '18m 15s'
+[17:08:50][D][sensor:093]: 'Uptime Sensor': Sending state 1094.95605 s with 0 decimals of accuracy
+[17:08:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:08:50][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:08:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:08:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:08:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:09:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '18m 25s'
+[17:09:00][D][sensor:093]: 'Uptime Sensor': Sending state 1104.95898 s with 0 decimals of accuracy
+[17:09:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:09:00][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:09:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:09:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:09:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:09:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '18m 35s'
+[17:09:10][D][sensor:093]: 'Uptime Sensor': Sending state 1114.95996 s with 0 decimals of accuracy
+[17:09:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:09:10][D][sensor:093]: 'Loop Time': Sending state 37.00000 ms with 0 decimals of accuracy
+[17:09:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:09:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:09:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:09:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '18m 45s'
+[17:09:20][D][sensor:093]: 'Uptime Sensor': Sending state 1124.95996 s with 0 decimals of accuracy
+[17:09:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:09:20][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:09:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:09:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:09:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:09:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '18m 55s'
+[17:09:30][D][sensor:093]: 'Uptime Sensor': Sending state 1134.96497 s with 0 decimals of accuracy
+[17:09:30][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:09:30][D][sensor:093]: 'Loop Time': Sending state 34.00000 ms with 0 decimals of accuracy
+[17:09:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:09:30][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:09:32][D][main:288]: Current value of daylight_enable: 1
+[17:09:32][D][main:129]: Relay and red LED turned ON due to daylight enable switch
+[17:09:34][D][main:136]: Relay and red LED turned OFF after 3 seconds
+[17:09:34][D][switch:016]: 'Switch Relay shaker1' Turning OFF.
+[17:09:39][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:09:40][D][text_sensor:064]: 'Uptime Human Readable': Sending state '19m 5s'
+[17:09:40][D][sensor:093]: 'Uptime Sensor': Sending state 1144.96802 s with 0 decimals of accuracy
+[17:09:40][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:09:40][D][sensor:093]: 'Loop Time': Sending state 33.00000 ms with 0 decimals of accuracy
+[17:09:40][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:09:40][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:09:49][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:09:50][D][text_sensor:064]: 'Uptime Human Readable': Sending state '19m 15s'
+[17:09:50][D][sensor:093]: 'Uptime Sensor': Sending state 1154.96802 s with 0 decimals of accuracy
+[17:09:50][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:09:50][D][sensor:093]: 'Loop Time': Sending state 32.00000 ms with 0 decimals of accuracy
+[17:09:50][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:09:50][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:09:59][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:10:00][D][text_sensor:064]: 'Uptime Human Readable': Sending state '19m 25s'
+[17:10:00][D][sensor:093]: 'Uptime Sensor': Sending state 1164.96899 s with 0 decimals of accuracy
+[17:10:00][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:10:00][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:10:00][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:10:00][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:10:09][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:10:10][D][text_sensor:064]: 'Uptime Human Readable': Sending state '19m 35s'
+[17:10:10][D][sensor:093]: 'Uptime Sensor': Sending state 1174.96899 s with 0 decimals of accuracy
+[17:10:10][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:10:10][D][sensor:093]: 'Loop Time': Sending state 36.00000 ms with 0 decimals of accuracy
+[17:10:10][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:10:10][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:10:19][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:10:20][D][text_sensor:064]: 'Uptime Human Readable': Sending state '19m 45s'
+[17:10:20][D][sensor:093]: 'Uptime Sensor': Sending state 1184.96899 s with 0 decimals of accuracy
+[17:10:20][D][sensor:093]: 'Free Heap': Sending state 25264.00000 B with 0 decimals of accuracy
+[17:10:20][D][sensor:093]: 'Loop Time': Sending state 29.00000 ms with 0 decimals of accuracy
+[17:10:20][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:10:20][D][sensor:093]: 'Heap Fragmentation': Sending state 18.00000 % with 1 decimals of accuracy
+[17:10:29][D][sensor:093]: 'WiFi Signal Sensor': Sending state -81.00000 dBm with 0 decimals of accuracy
+[17:10:30][D][text_sensor:064]: 'Uptime Human Readable': Sending state '19m 55s'
+[17:10:30][D][sensor:093]: 'Uptime Sensor': Sending state 1194.96899 s with 0 decimals of accuracy
+[17:10:30][D][sensor:093]: 'Free Heap': Sending state 25448.00000 B with 0 decimals of accuracy
+[17:10:30][D][sensor:093]: 'Loop Time': Sending state 35.00000 ms with 0 decimals of accuracy
+[17:10:30][D][sensor:093]: 'Max Alloc Block': Sending state 12872.00000 B with 0 decimals of accuracy
+[17:10:30][D][sensor:093]: 'Heap Fragmentation': Sending state 19.00000 % with 1 decimals of accuracy

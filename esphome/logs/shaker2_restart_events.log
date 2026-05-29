@@ -1,0 +1,28 @@
+[16:40:41][C][restart:068]: Restart Switch 'Restart'
+[16:40:41][C][restart:070]:   Icon: 'mdi:restart'
+[16:40:41][C][restart:090]:   Restore Mode: always OFF
+[16:40:41][C][safe_mode.switch:070]:   Icon: 'mdi:restart-alert'
+[16:40:41][C][safe_mode:019]:   Boot considered successful after 60 seconds
+[16:40:41][C][safe_mode:021]:   Invoke after 10 boot attempts
+[16:40:41][C][mqtt.switch:041]: MQTT Switch 'Restart': 
+[16:40:41][C][mqtt.switch:042]:   State Topic: 'src/shaker2/switch/restart/state'
+[16:40:41][C][mqtt.switch:042]:   Command Topic: 'src/shaker2/switch/restart/command'
+[16:40:42][D][debug:053]: Boot Version=31 Mode=1
+[16:40:42][D][debug:056]: Reset Reason: Software/System restart
+[16:40:42][D][debug:057]: Reset Info: Software/System restart
+[16:44:39][I][app:149]: Rebooting safely...
+[16:45:04][C][restart:068]: Restart Switch 'Restart'
+[16:45:04][C][restart:070]:   Icon: 'mdi:restart'
+[16:45:04][C][restart:090]:   Restore Mode: always OFF
+[16:45:04][C][safe_mode.switch:070]:   Icon: 'mdi:restart-alert'
+[16:45:04][C][safe_mode:019]:   Boot considered successful after 60 seconds
+[16:45:04][C][safe_mode:021]:   Invoke after 10 boot attempts
+[16:45:04][C][mqtt.switch:041]: MQTT Switch 'Restart': 
+[16:45:04][C][mqtt.switch:042]:   State Topic: 'src/shaker2/switch/restart/state'
+[16:45:04][C][mqtt.switch:042]:   Command Topic: 'src/shaker2/switch/restart/command'
+[16:45:05][D][debug:053]: Boot Version=31 Mode=1
+[16:45:05][D][debug:056]: Reset Reason: Software/System restart
+[16:45:05][D][debug:057]: Reset Info: Software/System restart
+[16:45:50][I][safe_mode:041]: Boot seems successful; resetting boot loop counter
+[16:50:52][I][app:149]: Rebooting safely...
+[16:52:03][I][safe_mode:041]: Boot seems successful; resetting boot loop counter

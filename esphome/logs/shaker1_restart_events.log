@@ -1,0 +1,20 @@
+[16:40:37][C][restart:068]: Restart Switch 'Restart'
+[16:40:37][C][restart:070]:   Icon: 'mdi:restart'
+[16:40:37][C][restart:090]:   Restore Mode: always OFF
+[16:40:37][C][safe_mode.switch:070]:   Icon: 'mdi:restart-alert'
+[16:40:38][C][safe_mode:019]:   Boot considered successful after 60 seconds
+[16:40:38][C][safe_mode:021]:   Invoke after 10 boot attempts
+[16:40:38][C][mqtt.switch:041]: MQTT Switch 'Restart': 
+[16:40:38][C][mqtt.switch:042]:   State Topic: 'src/shaker1/switch/restart/state'
+[16:40:38][C][mqtt.switch:042]:   Command Topic: 'src/shaker1/switch/restart/command'
+[16:40:38][D][debug:053]: Boot Version=31 Mode=1
+[16:40:38][D][debug:056]: Reset Reason: Software/System restart
+[16:40:38][D][debug:057]: Reset Info: Software/System restart
+[16:44:19][I][app:149]: Rebooting safely...
+WARNING shaker1 @ 192.168.0.188: Connection error occurred: [Errno 104] Connection reset by peer
+WARNING shaker1 @ 192.168.0.188: Connection error occurred: [Errno 104] Connection reset by peer
+[16:50:35][I][app:149]: Rebooting safely...
+[16:50:56][D][debug:053]: Boot Version=31 Mode=1
+[16:50:56][D][debug:056]: Reset Reason: Software/System restart
+[16:50:56][D][debug:057]: Reset Info: Software/System restart
+[16:51:46][I][safe_mode:041]: Boot seems successful; resetting boot loop counter

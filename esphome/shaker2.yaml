@@ -25,7 +25,7 @@ esp8266:
 ota:
   - platform: esphome
 mqtt:
-  broker: limero.be
+  broker: limero.ddns.net
   port: 1883 
   id: mqtt_client
   topic_prefix: 'src/${device_name}'
@@ -36,7 +36,7 @@ mqtt:
     topic: src/${device_name}/sys/online
     payload: 'false'
   log_topic: src/${device_name}/sys/log
-  discovery: true
+  discovery: false
   on_message:
     - topic: dst/shaker2/shake/trigger
       then:
@@ -47,23 +47,22 @@ time:
   - platform: sntp
     id: my_time
     timezone: Europe/Brussels
+    on_time_sync:
+      then:
+        - script.execute: sync_daylight_from_time
     on_time:
       - seconds: 0
         minutes: 30
         hours: 5
         then:
-          - globals.set:
-              id: daylight_enable
-              value: 'true'
-          - logger.log: "Daylight enable switch turned ON at 05:20"
+          - script.execute: sync_daylight_from_time
+          - logger.log: "Daylight enable switch recalculated at 05:30"
       - seconds: 0
         minutes: 30
         hours: 21
         then:
-          - globals.set:
-              id: daylight_enable
-              value: 'false'
-          - logger.log: "Daylight enable switch turned OFF at 22:00"
+          - script.execute: sync_daylight_from_time
+          - logger.log: "Daylight enable switch recalculated at 21:30"
         
 status_led:
   pin: GPIO2
@@ -84,8 +83,8 @@ output:
 globals:
   - id: daylight_enable
     type: bool
-    initial_value: 'true'
-    restore_value: true
+    initial_value: 'false'
+    restore_value: false
   - id: relay_duration
     type: int
     initial_value: '2000'  # Duration in milliseconds for which the relay should be activated
@@ -108,6 +107,17 @@ interval:
             - logger.log: "Daylight enable switch is OFF, not activating relay or red LED"
 
 script:
+  - id: sync_daylight_from_time
+    then:
+      - lambda: |-
+          auto now = id(my_time).now();
+          if (!now.is_valid()) {
+            ESP_LOGW("daylight", "Time not synced yet; keeping current daylight state");
+            return;
+          }
+          const int minutes_now = now.hour * 60 + now.minute;
+          id(daylight_enable) = (minutes_now >= (5 * 60 + 30)) && (minutes_now < (21 * 60 + 30));
+
   - id: cycle_relay
     mode: restart
     then:
@@ -183,6 +193,16 @@ sensor:  # WiFi
                 (minutes ? to_string(minutes) + "m " : "") +
                 (to_string(seconds) + "s")
               ).c_str();
+
+  - platform: debug
+    free:
+      name: "Free Heap"
+    block:
+      name: "Max Alloc Block"
+    fragmentation:
+      name: "Heap Fragmentation"
+    loop_time:
+      name: "Loop Time"
 binary_sensor:
   # ESP Status
   - platform: status
@@ -208,31 +228,6 @@ text_sensor:
     name: "ESPHome Version"
     hide_timestamp: true
 
-    # Example configuration entry
-  - platform: wifi_info
-    ip_address:
-      name: ESP IP Address
-      address_0:
-        name: ESP IP Address 0
-      address_1:
-        name: ESP IP Address 1
-      address_2:
-        name: ESP IP Address 2
-      address_3:
-        name: ESP IP Address 3
-      address_4:
-        name: ESP IP Address 4
-    ssid:
-      name: ESP Connected SSID
-    bssid:
-      name: ESP Connected BSSID
-    mac_address:
-      name: ESP Mac Wifi Address
-    scan_results:
-      name: ESP Latest Scan Results
-    dns_address:
-      name: ESP DNS Address
-
   #-------------------------------------------------------------------------------
   # Custom Text sensors
   #-------------------------------------------------------------------------------
@@ -240,4 +235,7 @@ text_sensor:
     name: Uptime Human Readable
     id: ${device_internal_name}_uptime_human
     icon: mdi:clock-start
+
+debug:
+  update_interval: 10s
 

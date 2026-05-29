@@ -1,5 +1,5 @@
 esphome:
-  name: chicken-coop
+  name: chicken-coop 
   on_boot:
     priority: -10
     then:
@@ -10,8 +10,6 @@ esphome:
     build_flags:
       - -DBOARD_HAS_PSRAM
       - -mfix-esp32-psram-cache-issue
-
-psram:
   
 substitutions:
   device_name: chicken-coop
@@ -32,19 +30,19 @@ ota:
 logger:
 
 # Enable Home Assistant API
-api: # de-deactivated fot mqtt
+api:
 
   
 # Example configuration entry
 esp32_camera:
   # ... other settings ...
   # Increase brightness (default is 0, range -2 to 2 or higher)
-  brightness: 2
+  brightness: 0
   # Increase contrast (default is 0, range -2 to 2 or higher)
   contrast: 2
   # Raise gain ceiling (ISO) to improve low-light sensitivity
   # Options: 2x, 4x, 8x, 16x, 32x, 64x, 128x
-  agc_gain_ceiling: 128x
+  agc_gain_ceiling: 64x
   # Set automatic exposure to improve lighting
   aec2: true
   ae_level: 2
@@ -105,12 +103,14 @@ switch:
     id: pin_12
     interlock: [pin_13] # Safety: Prevents 12 and 13 being 1 at the same time
     restore_mode: ALWAYS_OFF
+    internal: true # Hides individual switches from Home Assistant UI
 
   - platform: gpio
     pin: GPIO13
     id: pin_13
     interlock: [pin_12]
     restore_mode: ALWAYS_OFF
+    internal: true
 
 
 cover:
@@ -165,12 +165,10 @@ sensor:
     name: "Battery Voltage"
     update_interval: 60s
     unit_of_measurement: "V"
-    attenuation: 11db  # Add this line
     filters:
       # Multiplier = (R1 + R2) / R2. 
-      # 
-      # Example: (100 + 27) / 27 = 4.7
-      - multiply: 4.70
+      # Example: (100 + 22) / 22 = 5.545
+      - multiply: 5.545
     id: batt_voltage
 
   - platform: template
@@ -191,30 +189,4 @@ sensor:
       - clamp:
           min_value: 0
           max_value: 100
-  # existing sensors ...
-
-  - platform: wifi_signal
-    name: "Chicken Coop WiFi RSSI"
-    id: chicken_coop_wifi_rssi
-    update_interval: 60s
-    entity_category: diagnostic
-text_sensor:
-  - platform: wifi_info
-    ssid:
-      name: "Chicken Coop Connected SSID"
-      entity_category: diagnostic
-
-mqtt:
-  broker: !secret mqtt_broker
-  port: !secret mqtt_port 
-  id: mqtt_client
-  topic_prefix: 'src/${device_name}'
-  birth_message:
-    topic: src/${device_name}/sys/online
-    payload: 'true'
-  will_message:
-    topic: src/${device_name}/sys/online
-    payload: 'false'
-  log_topic: src/${device_name}/sys/log
-  discovery: false
 
