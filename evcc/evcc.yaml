@@ -1,0 +1,86 @@
+
+site:
+  title: My Home
+  meters:
+    grid: dsmr_power_meter
+    pv: sma_solar_meter
+meters:
+  - name: dsmr_power_meter
+    type: custom
+    power:
+      source: calc
+      add:
+        - source: mqtt
+          topic: src/esp_p1/sensor/dsmr_reader_power_consumed/state
+          scale: 1000
+        - source: mqtt
+          topic: src/esp_p1/sensor/dsmr_reader_power_returned/state
+          scale: -1000
+#    energy:
+#      source: calc
+#      add:
+#        - source: mqtt
+#          topic: src/esp_p1/sensor/dsmr_reader_energy_delivered_tariff1/state
+#          scale: 1
+#        - source: mqtt
+#          topic: src/esp_p1/sensor/dsmr_reader_energy_delivered_tariff2/state
+#          scale: 1
+    currents:
+      - source: mqtt
+        topic: src/esp_p1/sensor/dsmr_reader_current_l1/state
+      - source: mqtt
+        topic: src/esp_p1/sensor/dsmr_reader_current_l2/state
+      - source: mqtt
+        topic: src/esp_p1/sensor/dsmr_reader_current_l3/state
+
+  - name: sma_solar_meter
+    type: custom
+    power:
+      source: calc
+      add:
+        - source: mqtt
+          topic: SMA_2100466612   
+          jq: .PACTot
+        - source: mqtt
+          topic: SMA_2100461879   
+          jq: .PACTot
+    energy:
+      source: calc
+      add:
+        - source: mqtt
+          topic: SMA_2100466612
+          jq: .ETotal
+        - source: mqtt
+          topic: SMA_2100461879
+          jq: .ETotal
+
+chargers:
+  - name: my_alfen_charger
+    type: alfen
+    uri: 192.168.0.50:502 # <-- Replace 192.168.0.X with your Alfen's actual IP address
+    id: 1                # <-- Your Modbus Slave/Unit ID (usually 1)
+
+loadpoints:
+  - title: Garage            # The name displayed above the car in the UI
+    charger: my_alfen_charger # Must match the 'name' defined in chargers above
+    mode: pv                 # Default charging mode (off, now, minpv, pv)
+
+tariffs:
+  currency: EUR
+  grid:
+    type: fixed
+    price: 0.30      # 30 cents expressed as a decimal value of your currency
+  
+  # This is where forecastsolar belongs in your version:
+  solar:
+    type: template
+    template: forecast-solar
+    lat: 50.937
+    lon: 4.041
+    dec: 35
+    az: 0.1        # East array orientation
+    kwp: 9.5       # First array size
+mqtt:
+  broker: 192.168.0.240:1883   # Or localhost / your MQTT server IP
+  username: 
+  password: 
