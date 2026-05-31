@@ -1,8 +1,11 @@
 esphome:
-  name: shaker1  
+  name: shaker1 
   
 substitutions:
   device_name: shaker1
+  device_internal_name: shaker1
+  device_sampling_time: 10s  # Adjust the sampling time as needed
+  friendly_name: Shaker 1
 
 api:
 
@@ -22,7 +25,7 @@ esp8266:
 ota:
   - platform: esphome
 mqtt:
-  broker: limero.be
+  broker: limero.ddns.net
   port: 1883 
   id: mqtt_client
   topic_prefix: 'src/${device_name}'
@@ -33,7 +36,7 @@ mqtt:
     topic: src/${device_name}/sys/online
     payload: 'false'
   log_topic: src/${device_name}/sys/log
-  discovery: true
+  discovery: false
   on_message:
     - topic: dst/shaker1/shake/trigger
       then:
@@ -44,23 +47,22 @@ time:
   - platform: sntp
     id: my_time
     timezone: Europe/Brussels
+    on_time_sync:
+      then:
+        - script.execute: sync_daylight_from_time
     on_time:
       - seconds: 0
         minutes: 30
         hours: 5
         then:
-          - globals.set:
-              id: daylight_enable
-              value: 'true'
-          - logger.log: "Daylight enable switch turned ON at 05:20"
+          - script.execute: sync_daylight_from_time
+          - logger.log: "Daylight enable switch recalculated at 05:30"
       - seconds: 0
         minutes: 30
         hours: 21
         then:
-          - globals.set:
-              id: daylight_enable
-              value: 'false'
-          - logger.log: "Daylight enable switch turned OFF at 22:00"
+          - script.execute: sync_daylight_from_time
+          - logger.log: "Daylight enable switch recalculated at 21:30"
         
 status_led:
   pin: GPIO2
@@ -81,11 +83,11 @@ output:
 globals:
   - id: daylight_enable
     type: bool
-    initial_value: 'true'
-    restore_value: true
+    initial_value: 'false'
+    restore_value: false
   - id: relay_duration
     type: int
-    initial_value: '3000'  # Duration in milliseconds for which the relay should be activated
+    initial_value: '2000'  # Duration in milliseconds for which the relay should be activated
   - id: relay_interval
     type: int
     initial_value: '300'  # Interval in seconds for the pump cycle
@@ -105,6 +107,17 @@ interval:
             - logger.log: "Daylight enable switch is OFF, not activating relay or red LED"
 
 script:
+  - id: sync_daylight_from_time
+    then:
+      - lambda: |-
+          auto now = id(my_time).now();
+          if (!now.is_valid()) {
+            ESP_LOGW("daylight", "Time not synced yet; keeping current daylight state");
+            return;
+          }
+          const int minutes_now = now.hour * 60 + now.minute;
+          id(daylight_enable) = (minutes_now >= (5 * 60 + 30)) && (minutes_now < (21 * 60 + 30));
+
   - id: cycle_relay
     mode: restart
     then:
@@ -118,6 +131,14 @@ script:
       - switch.turn_off: activate_relay
 
 switch:
+  - platform: restart
+    name: "Restart"
+    id: device_restart
+  
+  - platform: safe_mode
+    name: Use Safe Mode
+    id: device_safe_mode
+
   - platform: template
     name: "Switch Relay shaker1"
     id: activate_relay
@@ -142,3 +163,78 @@ switch:
           value: 'false'
       - logger.log: "Daylight enable switch turned OFF"
     icon: "mdi:weather-sunny"
+sensor:  # WiFi
+  - platform: wifi_signal
+    name: "WiFi Signal Sensor"
+    id: ${device_internal_name}_wifi_signal_sensor
+    update_interval: ${device_sampling_time}
+
+  # Uptime
+  - platform: uptime
+    name: "Uptime Sensor"
+    id: ${device_internal_name}_uptime_sensor
+    update_interval: ${device_sampling_time}
+    internal: true
+    on_raw_value:
+      then:
+        - text_sensor.template.publish:
+            id: ${device_internal_name}_uptime_human
+            state: !lambda |-
+              int seconds = round(id(${device_internal_name}_uptime_sensor).raw_state);
+              int days = seconds / (24 * 3600);
+              seconds = seconds % (24 * 3600);
+              int hours = seconds / 3600;
+              seconds = seconds % 3600;
+              int minutes = seconds /  60;
+              seconds = seconds % 60;
+              return (
+                (days ? to_string(days) + "d " : "") +
+                (hours ? to_string(hours) + "h " : "") +
+                (minutes ? to_string(minutes) + "m " : "") +
+                (to_string(seconds) + "s")
+              ).c_str();
+
+  - platform: debug
+    free:
+      name: "Free Heap"
+    block:
+      name: "Max Alloc Block"
+    fragmentation:
+      name: "Heap Fragmentation"
+    loop_time:
+      name: "Loop Time"
+binary_sensor:
+  # ESP Status
+  - platform: status
+    name: "Status"
+    id: ${device_internal_name}_status
+
+text_sensor:
+  #-------------------------------------------------------------------------------
+  # ESP32 internal sensors
+  #-------------------------------------------------------------------------------
+  - platform: wifi_info
+    ip_address:
+      name: IP Address
+      id: ${device_internal_name}_ip_address
+    ssid:
+      name: Connected SSID
+      id: ${device_internal_name}_connected_ssid
+    mac_address:
+      name: Mac Wifi Address
+      id: ${device_internal_name}_mac_address
+
+  - platform: version
+    name: "ESPHome Version"
+    hide_timestamp: true
+
+  #-------------------------------------------------------------------------------
+  # Custom Text sensors
+  #-------------------------------------------------------------------------------
+  - platform: template
+    name: Uptime Human Readable
+    id: ${device_internal_name}_uptime_human
+    icon: mdi:clock-start
+    
+debug:
+  update_interval: 10s
