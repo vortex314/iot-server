@@ -1,0 +1,9 @@
+services:
+  evcc:
+    image: evcc/evcc:latest
+    container_name: evcc
+    network_mode: host
+    volumes:
+      - /home/lieven/workspace/iot-server/evcc:/root/.evcc
+      # - /home/lieven/workspace/iot-server/evcc.yaml:/etc/evcc.yaml  # optional, if using file config
+    restart: unless-stopped
