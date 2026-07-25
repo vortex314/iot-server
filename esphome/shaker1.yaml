@@ -130,6 +130,10 @@ script:
       - logger.log: "Relay and red LED turned OFF after 3 seconds"
       - switch.turn_off: activate_relay
 
+button:
+  - platform: restart
+    name: "${friendly_name} Restart"
+
 switch:
   - platform: restart
     name: "Restart"

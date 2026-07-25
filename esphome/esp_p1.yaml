@@ -36,6 +36,9 @@ dsmr:
   max_telegram_length: 1700
   crc_check: false
 
+button:
+  - platform: restart
+    name: "${friendly_name} Restart"
   
 sensor:
   - platform: dsmr
@@ -124,4 +127,6 @@ mqtt:
     topic: src/${device_name}/sys/online
     payload: 'false'
   log_topic: src/${device_name}/sys/log
-  discovery: true
+  discovery: false
+
+
