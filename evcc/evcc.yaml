@@ -1,9 +1,19 @@
+network:
+  schema: http
+  host: 0.0.0.0
+  port: 7070
+
+sponsortoken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJldmNjLmlvIiwic3ViIjoidm9ydGV4MzE0IiwiZXhwIjoxODc2MDcxNjAwLCJpYXQiOjE3ODE0NjM2MDAsInNyYyI6ImdoIn0.q10e4d2ljL17C8o-Ii3lNnTaSEqTdrTvJCAKgy7sCJ8
+
 
 site:
   title: My Home
   meters:
     grid: dsmr_power_meter
     pv: sma_solar_meter
+    battery:
+      - marstek_battery_caad
+      - marstek_battery_e7fd
 meters:
   - name: dsmr_power_meter
     type: custom
@@ -54,6 +64,34 @@ meters:
           topic: SMA_2100461879
           jq: .ETotal
 
+  - name: marstek_battery_caad
+    type: custom
+    power:
+      source: mqtt
+      broker: 192.168.0.240:1883
+      topic: marstek/3c227f09caad/state
+      jq: .power_w
+    soc:
+      source: mqtt
+      broker: 192.168.0.240:1883
+      topic: marstek/3c227f09caad/state
+      jq: .soc_percent
+    capacity: 5.12 # kWh, set to your real battery size
+
+  - name: marstek_battery_e7fd
+    type: custom
+    power:
+      source: mqtt
+      broker: 192.168.0.240:1883
+      topic: marstek/0c587b17e7fd/state
+      jq: .power_w
+    soc:
+      source: mqtt
+      broker: 192.168.0.240:1883
+      topic: marstek/0c587b17e7fd/state
+      jq: .soc_percent
+    capacity: 5.12 # kWh, set to your real battery size
+
 chargers:
   - name: my_alfen_charger
     type: alfen
@@ -84,3 +122,8 @@ mqtt:
   broker: 192.168.0.240:1883   # Or localhost / your MQTT server IP
   username: 
   password: 
+influx:
+  url: http://localhost:8086 # Or your InfluxDB IP
+  token: snY8Mimp-b4GfwXpLaf7hRuEoVMz7ZsZRRQ_fcEbgoPiygIFc_ttoB3plSHeHdUOTPuVzo4_x_hV62-RiIDUeQ== # Must have WRITE permissions
+  org: home
+  database: evcc

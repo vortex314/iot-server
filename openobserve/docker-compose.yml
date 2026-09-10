@@ -1,0 +1,27 @@
+services:
+  openobserve:
+    image: public.ecr.aws/zinclabs/openobserve:latest
+    container_name: openobserve
+    restart: unless-stopped
+    ports:
+      - "5080:5080"          # Web UI + HTTP ingestion
+      # - "5081:5081"        # Optional: gRPC / OTLP (uncomment if needed)
+    environment:
+      ZO_ROOT_USER_EMAIL: "root@example.com"
+      ZO_ROOT_USER_PASSWORD: "Complexpass#123"   # ← change this!
+      ZO_DATA_DIR: "/data"
+      # Optional useful settings:
+      # ZO_TELEMETRY: "false"
+      # RUST_LOG: "info"
+    volumes:
+      - openobserve-data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5080/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    network_mode: host
+
+volumes:
+  openobserve-data:

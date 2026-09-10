@@ -1,0 +1,9 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - /home/lieven/config/homeassistant:/config
+      - /home/lieven/media/homeassistant:/media
+    restart: unless-stopped
+    network_mode: host
