@@ -19,6 +19,7 @@ http:
     - ::1
     - 127.0.0.1
 
+
 mqtt:
   sensor:
     - name: "Bytes received"
@@ -36,3 +37,8 @@ sensor:
     name: "SMA 2 Produced Energy"
     unit_prefix: k
     round: 2
+homeassistant:
+  allowlist_external_dirs:
+    - /media
+    - /config
+
