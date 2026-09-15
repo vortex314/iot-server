@@ -23,9 +23,11 @@ meters:
         - source: mqtt
           topic: src/esp_p1/sensor/dsmr_reader_power_consumed/state
           scale: 1000
+          timeout: 30s
         - source: mqtt
           topic: src/esp_p1/sensor/dsmr_reader_power_returned/state
           scale: -1000
+          timeout: 30s
 #    energy:
 #      source: calc
 #      add:
